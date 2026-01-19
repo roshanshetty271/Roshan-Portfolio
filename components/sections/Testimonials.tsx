@@ -1,133 +1,126 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useRef } from "react";
+import { motion } from "framer-motion";
 import { Quote, ChevronLeft, ChevronRight, Linkedin } from "lucide-react";
-import SectionHeading from "@/components/ui/SectionHeading";
 import { testimonials } from "@/data/portfolio";
 
 export default function Testimonials() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const nextTestimonial = () => {
-    setActiveIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = 400;
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
-    <section id="testimonials" className="section-padding bg-cream-100/50 dark:bg-charcoal-900/50">
+    <section id="testimonials" className="py-20 md:py-28 bg-cream-50 dark:bg-charcoal-900">
       <div className="container-custom">
-        <SectionHeading
-          title="Testimonials"
-          subtitle="What colleagues and managers say about working with me"
-        />
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex items-center justify-between mb-10"
+        >
+          <div>
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-2">
+              What People <span className="gradient-text">Say</span>
+            </h2>
+            <p className="text-charcoal-500 dark:text-cream-500">
+              Feedback from colleagues and managers
+            </p>
+          </div>
 
-        {/* Featured Testimonial Carousel */}
-        <div className="max-w-4xl mx-auto">
-          <div className="relative bg-cream-50 dark:bg-charcoal-800 rounded-2xl p-8 md:p-12">
-            {/* Quote icon */}
-            <div className="absolute top-6 left-6 md:top-8 md:left-8">
-              <Quote className="w-12 h-12 text-copper-200 dark:text-copper-900/50" />
-            </div>
+          {/* Navigation Arrows */}
+          <div className="hidden md:flex gap-2">
+            <button
+              onClick={() => scroll("left")}
+              className="p-3 rounded-full bg-charcoal-100 dark:bg-charcoal-800 text-charcoal-600 dark:text-cream-300 hover:bg-copper-500 hover:text-white transition-colors"
+              aria-label="Previous"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              className="p-3 rounded-full bg-charcoal-100 dark:bg-charcoal-800 text-charcoal-600 dark:text-cream-300 hover:bg-copper-500 hover:text-white transition-colors"
+              aria-label="Next"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </motion.div>
 
-            {/* Testimonial content */}
-            <div className="relative z-10 min-h-[250px] flex flex-col justify-center">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeIndex}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-center"
-                >
-                  {/* Highlight */}
-                  <p className="text-copper-600 dark:text-copper-400 font-medium mb-4 italic">
-                    &quot;{testimonials[activeIndex].highlight}&quot;
+        {/* Horizontal Scrolling Testimonials */}
+        <div
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={testimonial.id}
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="flex-shrink-0 w-[350px] md:w-[400px] snap-start"
+            >
+              <div className="h-full p-6 bg-white dark:bg-charcoal-800 rounded-xl border border-charcoal-100 dark:border-charcoal-700 shadow-sm">
+                {/* Highlight Quote */}
+                <div className="flex items-start gap-3 mb-4">
+                  <Quote className="w-8 h-8 text-copper-400 flex-shrink-0" />
+                  <p className="text-copper-600 dark:text-copper-400 font-medium italic text-lg leading-snug">
+                    "{testimonial.highlight}"
                   </p>
+                </div>
 
-                  {/* Quote */}
-                  <p className="text-lg md:text-xl text-charcoal-700 dark:text-cream-200 leading-relaxed mb-8">
-                    &quot;{testimonials[activeIndex].quote}&quot;
-                  </p>
+                {/* Truncated Quote */}
+                <p className="text-charcoal-600 dark:text-cream-400 text-sm leading-relaxed mb-6 line-clamp-4">
+                  {testimonial.quote}
+                </p>
 
-                  {/* Author */}
-                  <div className="flex flex-col items-center">
-                    <div className="w-14 h-14 bg-copper-200 dark:bg-copper-900/50 rounded-full flex items-center justify-center mb-3">
-                      <span className="font-display text-lg font-bold text-copper-600 dark:text-copper-400">
-                        {testimonials[activeIndex].author.split(" ").map(n => n[0]).join("")}
-                      </span>
-                    </div>
-                    <p className="font-semibold text-charcoal-900 dark:text-cream-100">
-                      {testimonials[activeIndex].author}
+                {/* Author */}
+                <div className="flex items-center gap-3 pt-4 border-t border-charcoal-100 dark:border-charcoal-700">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-copper-500 to-copper-600 flex items-center justify-center text-white text-sm font-bold">
+                    {testimonial.author.split(" ").map(n => n[0]).join("")}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm text-charcoal-900 dark:text-cream-100">
+                      {testimonial.author}
                     </p>
-                    <p className="text-sm text-charcoal-600 dark:text-cream-400">
-                      {testimonials[activeIndex].title}
-                    </p>
-                    <p className="text-sm text-copper-600 dark:text-copper-400">
-                      {testimonials[activeIndex].company} • {testimonials[activeIndex].relationship}
+                    <p className="text-xs text-charcoal-500 dark:text-cream-500">
+                      {testimonial.company} • {testimonial.relationship}
                     </p>
                   </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Navigation */}
-            <div className="flex items-center justify-between mt-8">
-              <button
-                onClick={prevTestimonial}
-                className="p-2 rounded-full bg-cream-200 dark:bg-charcoal-700 text-charcoal-700 dark:text-cream-200 hover:bg-copper-500 hover:text-white transition-colors"
-                aria-label="Previous testimonial"
-              >
-                <ChevronLeft size={24} />
-              </button>
-
-              {/* Dots */}
-              <div className="flex gap-2">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-colors ${
-                      index === activeIndex
-                        ? "bg-copper-500"
-                        : "bg-cream-300 dark:bg-charcoal-600 hover:bg-copper-300"
-                    }`}
-                    aria-label={`Go to testimonial ${index + 1}`}
-                  />
-                ))}
+                </div>
               </div>
-
-              <button
-                onClick={nextTestimonial}
-                className="p-2 rounded-full bg-cream-200 dark:bg-charcoal-700 text-charcoal-700 dark:text-cream-200 hover:bg-copper-500 hover:text-white transition-colors"
-                aria-label="Next testimonial"
-              >
-                <ChevronRight size={24} />
-              </button>
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div className="mt-12 text-center">
-            <p className="text-charcoal-600 dark:text-cream-400">
-              <span className="font-display text-3xl font-bold text-copper-500">8</span>
-              <span className="ml-2">LinkedIn Recommendations</span>
-            </p>
-            <a
-              href="https://linkedin.com/in/roshanshetty271"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-4 text-copper-600 dark:text-copper-400 hover:underline"
-            >
-              <Linkedin size={18} />
-              View all on LinkedIn
-            </a>
-          </div>
+            </motion.div>
+          ))}
         </div>
+
+        {/* LinkedIn CTA */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center mt-8"
+        >
+          <a
+            href="https://linkedin.com/in/roshanshetty271"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-copper-600 dark:text-copper-400 hover:underline font-medium"
+          >
+            <Linkedin size={18} />
+            View all 8 recommendations on LinkedIn
+          </a>
+        </motion.div>
       </div>
     </section>
   );

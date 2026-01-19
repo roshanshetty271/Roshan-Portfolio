@@ -1,6 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Experience from "@/components/sections/Experience";
+import Education from "@/components/sections/Education";
 import CurrentlyBuilding from "@/components/sections/CurrentlyBuilding";
 import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
@@ -15,6 +16,7 @@ export default function Home() {
       <WaveDivider color="cream" />
       <About />
       <Experience />
+      <Education />
       <WaveDivider color="charcoal" flip />
       <Projects />
       <CurrentlyBuilding />

@@ -71,14 +71,14 @@ export default function Experience() {
                   </p>
 
                   {/* Achievements */}
-                  <ul className={`mt-4 space-y-2 ${index % 2 === 0 ? "md:text-right" : ""}`}>
+                  <ul className={`mt-6 space-y-4 ${index % 2 === 0 ? "md:text-right" : ""}`}>
                     {job.achievements.map((achievement, achIndex) => (
                       <li
                         key={achIndex}
-                        className="text-sm text-charcoal-600 dark:text-cream-400 flex gap-2"
+                        className="text-sm text-charcoal-600 dark:text-cream-400 flex gap-3 leading-relaxed"
                       >
-                        <span className={`text-copper-500 flex-shrink-0 ${index % 2 === 0 ? "md:order-2" : ""}`}>
-                          •
+                        <span className="text-copper-500 flex-shrink-0">
+                          →
                         </span>
                         <span>{achievement}</span>
                       </li>

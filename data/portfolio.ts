@@ -8,11 +8,15 @@ export const personalInfo = {
   tagline: "Full-Stack Software Engineer | AI/ML Enthusiast | 5x SAP Certified",
   headline: "Building intelligent systems that make a difference",
   location: "Boston, MA",
-  about: `I am a software engineer with 2.5+ years of enterprise experience and a genuine passion for AI. I build full-stack applications, design RAG pipelines, and create distributed systems that solve real problems.
+  about: `I'm passionate about building impactful AI solutions. My recent internship at Aosenuma as an AI Software Developer solidified this, where I contributed to the end-to-end development of sophisticated AI-driven applications.
 
-With 5 SAP certifications spanning ABAP, HANA, Fiori, and S/4HANA, I bring enterprise credibility to modern development practices. I am currently finishing my Master's at Northeastern University and actively seeking full-time software development roles.
+This intensive AI-focused experience enhances my 2.5+ years in software engineering, which includes building enterprise solutions as an Associate Consultant at Capgemini. 
 
-What drives me is the intersection of practical engineering and emerging AI capabilities. I enjoy taking complex technical challenges and turning them into working solutions that people can actually use.`,
+I am actively seeking full-time software development roles to apply my expertise in AI, full-stack engineering, and data-driven solutions to create innovative and meaningful impact.
+
+What drives me is the intersection of practical engineering and emerging AI capabilities. I enjoy taking complex technical challenges and turning them into working solutions that people can actually use.
+
+Let's connect: shetty.ros@northeastern.edu`,
   openToWork: true,
   targetRoles: ["Full-Stack Developer", "Backend Engineer", "AI/ML Engineer", "Software Engineer"],
 };
@@ -71,11 +75,9 @@ export const experience = [
     type: "Internship",
     description: "Built AI-driven ESG Reporting Platform as sole frontend owner, implementing RAG pipelines and semantic search systems.",
     achievements: [
-      "Built intelligent document querying system using RAG pipeline with OpenAI embeddings, Supabase/pgvector, and Neo4j knowledge graphs for automated PDF, Excel, and Word processing",
-      "Developed semantic search enabling natural language queries with 300-dimensional embeddings and cosine similarity ranking across large datasets",
-      "Created Python data pipelines with Flask REST APIs for document ingestion, integrating PostgreSQL and Redis for real-time analytics",
-      "Delivered full-stack platform (React/Next.js/TypeScript + Python) with 15 D3.js visualizations in 4-person Agile team using Docker and CI/CD",
-      "Built chat agent using Voiceflow to connect company with website visitors (initiative beyond original roadmap)",
+      "Built RAG-powered document querying system with OpenAI embeddings, pgvector, and Neo4j knowledge graphs for automated PDF/Excel/Word processing",
+      "Developed semantic search with 300-dimensional embeddings and cosine similarity; created Python data pipelines with Flask REST APIs",
+      "Delivered full-stack platform (React/Next.js/TypeScript + Python) with 15 D3.js visualizations using Docker and CI/CD",
     ],
     technologies: ["Python", "Flask", "Next.js", "React", "TypeScript", "OpenAI API", "Neo4j", "PostgreSQL", "pgvector", "Redis", "Supabase", "Docker", "D3.js", "AWS ECS"],
   },
@@ -347,6 +349,7 @@ export const keyDifferentiators = [
 export const navigation = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
+  { name: "Education", href: "#education" },
   { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
   { name: "Testimonials", href: "#testimonials" },
@@ -380,8 +383,8 @@ export const currentlyBuilding = [
 // Typewriter words for hero section
 export const heroTypewriterWords = [
   "Full-Stack Developer",
-  "AI/ML Engineer",
-  "Backend Specialist",
+  "Frontend Specialist",
+  "AI Engineer",
   "Distributed Systems Builder",
 ];
 

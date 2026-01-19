@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { personalInfo, education } from "@/data/portfolio";
+import { personalInfo } from "@/data/portfolio";
 
 export default function About() {
   return (
@@ -38,26 +37,6 @@ export default function About() {
                 {paragraph}
               </p>
             ))}
-
-            {/* Education - inline and simple */}
-            <div className="pt-6 border-t border-charcoal-200 dark:border-charcoal-700">
-              <span className="font-mono text-xs text-charcoal-400 dark:text-cream-500 uppercase tracking-wider">
-                Education
-              </span>
-              <div className="mt-3 space-y-2">
-                {education.map((edu) => (
-                  <p key={edu.institution} className="text-sm text-charcoal-600 dark:text-cream-400">
-                    <span className="font-medium text-charcoal-900 dark:text-cream-100">
-                      {edu.degree}
-                    </span>
-                    {" · "}
-                    {edu.institution}
-                    {" · "}
-                    <span className="text-charcoal-400 dark:text-cream-500">{edu.graduationDate}</span>
-                  </p>
-                ))}
-              </div>
-            </div>
           </motion.div>
 
           {/* Photo - simple and clean */}
@@ -68,13 +47,29 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="hidden md:block"
           >
-            <Image
-              src="/headshot.png"
-              alt={personalInfo.name}
-              width={200}
-              height={200}
-              className="rounded-lg grayscale hover:grayscale-0 transition-all duration-500"
-            />
+            {/* Code Terminal Visual - replaces duplicate photo */}
+            <div className="relative">
+              <div className="w-64 h-56 bg-charcoal-900 dark:bg-charcoal-950 rounded-xl border border-charcoal-700 shadow-2xl overflow-hidden">
+                {/* Terminal Header */}
+                <div className="flex items-center gap-2 px-4 py-2.5 bg-charcoal-800 border-b border-charcoal-700">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                  </div>
+                  <span className="text-xs text-charcoal-400 font-mono ml-2">roshan.dev</span>
+                </div>
+                {/* Terminal Content */}
+                <div className="p-4 font-mono text-sm space-y-1.5">
+                  <div className="text-green-400">$ whoami</div>
+                  <div className="text-cream-300 pl-2">Full-Stack Developer</div>
+                  <div className="text-green-400 mt-3">$ skills --top</div>
+                  <div className="text-copper-400 pl-2">Python, Java, React, Node.js</div>
+                  <div className="text-green-400 mt-3">$ experience</div>
+                  <div className="text-teal-400 pl-2 pb-2">3+ years in enterprise dev</div>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

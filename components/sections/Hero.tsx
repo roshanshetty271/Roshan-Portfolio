@@ -43,31 +43,27 @@ export default function Hero() {
     ];
 
     return (
-        <section className="relative min-h-screen flex items-center overflow-hidden">
-            {/* Dynamic Background Grid */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-
-            {/* Decorative Gradient Orbs */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-copper-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 z-0"></div>
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 z-0"></div>
-
-            <div className="container-custom py-32 relative z-10">
+        <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
+            {/* Container with proper navbar clearance */}
+            <div className="container-custom py-8 md:py-12 relative z-10 flex-1 flex flex-col justify-center">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
                     {/* Left Content */}
                     <div>
-                        {/* Availability badge */}
+                        {/* Availability badge - Code style */}
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5 }}
-                            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-xs font-medium text-green-700 dark:text-green-400 mb-6"
+                            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-charcoal-900 dark:bg-charcoal-950 border border-charcoal-700 text-xs font-mono mb-6 shadow-lg"
                         >
+                            <span className="text-green-400">$</span>
+                            <span className="text-charcoal-400">status:</span>
                             <span className="relative flex h-2 w-2">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                             </span>
-                            Open to Opportunities
+                            <span className="text-green-400">Actively Seeking Full-Time Roles</span>
                         </motion.div>
 
                         {/* Name */}
@@ -100,7 +96,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
-                            className="mt-8 mb-8 p-4 bg-white/50 dark:bg-charcoal-800/50 backdrop-blur-sm rounded-xl border border-copper-500/20 shadow-sm max-w-lg"
+                            className="mt-6 mb-6 p-4 bg-white/50 dark:bg-charcoal-800/50 backdrop-blur-sm rounded-xl border border-copper-500/20 shadow-sm max-w-lg"
                         >
                             <div className="flex gap-3">
                                 <Quote size={24} className="text-copper-500 flex-shrink-0" />
@@ -115,12 +111,12 @@ export default function Hero() {
                             </div>
                         </motion.div>
 
-                        {/* NEW Impact Numbers - Better stats */}
+                        {/* Impact Numbers */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.4 }}
-                            className="flex flex-wrap gap-6 text-sm py-6 border-y border-dashed border-charcoal-200 dark:border-charcoal-800"
+                            className="flex flex-wrap gap-12 text-sm py-6 border-y border-dashed border-charcoal-200 dark:border-charcoal-800"
                         >
                             <div className="text-center">
                                 <span className="block text-2xl font-bold text-charcoal-900 dark:text-cream-100">3+</span>
@@ -131,8 +127,8 @@ export default function Hero() {
                                 <span className="text-charcoal-500 dark:text-cream-400 text-xs">Northeastern</span>
                             </div>
                             <div className="text-center">
-                                <span className="block text-2xl font-bold text-teal-600 dark:text-teal-400">AI</span>
-                                <span className="text-charcoal-500 dark:text-cream-400 text-xs">Full-Stack + ML</span>
+                                <span className="block text-2xl font-bold text-teal-600 dark:text-teal-400">&lt;/&gt;</span>
+                                <span className="text-charcoal-500 dark:text-cream-400 text-xs">Full Stack Dev</span>
                             </div>
                         </motion.div>
 
@@ -141,19 +137,10 @@ export default function Hero() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5, delay: 0.5 }}
-                            className="mt-8 flex items-center gap-4"
+                            className="mt-16 flex items-center gap-4" // Increased top margin from mt-12 to mt-16
                         >
-                            <a
-                                href="#projects"
-                                className="group relative px-6 py-3 bg-charcoal-900 dark:bg-cream-100 text-white dark:text-charcoal-900 text-sm font-semibold rounded-lg overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1"
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-r from-copper-600 to-copper-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                <span className="relative z-10 flex items-center gap-2">
-                                    View Work <ArrowDown size={16} />
-                                </span>
-                            </a>
-
-                            <div className="flex gap-2">
+                            {/* CTA Removed - Only Socials remain */}
+                            <div className="lg:hidden flex gap-2"> {/* Removed 'hidden' from lg:hidden to always show on small screens */}
                                 {socialLinks.map((link) => (
                                     <a
                                         key={link.label}
@@ -170,50 +157,59 @@ export default function Hero() {
                         </motion.div>
                     </div>
 
-                    {/* Right - Photo Placeholder - REMOVED SAP badge */}
+                    {/* Right - Photo Card + Socials */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.7, delay: 0.4 }}
-                        className="hidden lg:flex justify-center relative"
+                        className="hidden lg:flex flex-col items-center justify-center relative mt-[-20px]"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-tr from-copper-500/20 to-teal-500/20 rounded-[2rem] rotate-6 scale-105 blur-xl"></div>
-
-                        <div className="relative w-80 h-96 bg-cream-50 dark:bg-charcoal-900 rounded-[2rem] border border-white/20 dark:border-white/10 shadow-2xl flex flex-col items-center justify-center overflow-hidden hover:scale-[1.02] transition-transform duration-500">
-                            <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#c97856_1px,transparent_1px)] bg-[size:16px_16px]"></div>
-
-                            <div className="relative z-10 flex flex-col items-center p-8 text-center">
-                                <div className="w-24 h-24 bg-gradient-to-br from-copper-100 to-cream-100 dark:from-charcoal-800 dark:to-charcoal-700 rounded-full flex items-center justify-center mb-6 shadow-inner">
-                                    <User size={48} className="text-copper-400" />
-                                </div>
-                                <h3 className="font-display text-2xl font-bold text-charcoal-800 dark:text-cream-100">Roshan Shetty</h3>
-                                <p className="text-charcoal-500 dark:text-cream-400 text-sm mt-2">Software Engineer</p>
-
-                                <div className="mt-6 flex gap-2">
-                                    <span className="px-3 py-1 bg-copper-100/50 dark:bg-copper-900/30 text-copper-700 dark:text-copper-300 text-xs rounded-full font-medium">Full-Stack</span>
-                                    <span className="px-3 py-1 bg-teal-100/50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 text-xs rounded-full font-medium">AI/ML</span>
-                                </div>
+                        {/* Photo Card - Slightly smaller to fit viewport */}
+                        <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-tr from-copper-500/20 to-teal-500/20 rounded-[2rem] rotate-6 scale-105 blur-xl"></div>
+                            <div className="relative w-72 h-80 lg:w-80 lg:h-96 bg-cream-50 dark:bg-charcoal-900 rounded-[2rem] border border-white/20 dark:border-white/10 shadow-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-500">
+                                <img
+                                    src="/Roshan-photo.jpg"
+                                    alt="Roshan Shetty"
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
+                        </div>
+
+                        {/* Social Links - Moved here */}
+                        <div className="flex gap-4 mt-8">
+                            {socialLinks.map((link) => (
+                                <a
+                                    key={link.label}
+                                    href={link.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-3 rounded-lg border border-charcoal-200 dark:border-charcoal-700 bg-white/50 dark:bg-charcoal-800/50 backdrop-blur-sm text-charcoal-600 dark:text-cream-300 hover:border-copper-500 hover:text-copper-500 dark:hover:text-copper-400 transition-all hover:-translate-y-1 shadow-sm"
+                                    aria-label={link.label}
+                                >
+                                    <link.icon size={20} />
+                                </a>
+                            ))}
                         </div>
                     </motion.div>
 
                 </div>
-
-                {/* Scroll indicator */}
-                <motion.a
-                    href="#about"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1, y: [0, 8, 0] }}
-                    transition={{
-                        opacity: { duration: 0.5, delay: 1.2 },
-                        y: { duration: 1.5, repeat: Infinity, delay: 1.2 }
-                    }}
-                    className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-charcoal-400 dark:text-cream-500 hover:text-copper-500 transition-colors cursor-pointer z-10"
-                >
-                    <span className="text-xs font-mono uppercase tracking-wider">Scroll</span>
-                    <ArrowDown size={14} />
-                </motion.a>
             </div>
+
+            {/* Scroll indicator - absolute at bottom of section */}
+            <motion.a
+                href="#about"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, y: [0, 8, 0] }}
+                transition={{
+                    opacity: { duration: 0.5, delay: 1.2 },
+                    y: { duration: 1.5, repeat: Infinity, delay: 1.2 }
+                }}
+                className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-charcoal-400 dark:text-cream-500 hover:text-copper-500 transition-colors cursor-pointer z-20"
+            >
+                <span className="text-[10px] font-mono uppercase tracking-wider">Scroll</span>
+                <ArrowDown size={14} />
+            </motion.a>
         </section>
     );
 }

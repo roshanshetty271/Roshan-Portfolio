@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
-import { useTheme } from "./ThemeProvider";
+import { useTheme } from "@/components/layout/ThemeProvider";
 import { navigation, personalInfo } from "@/data/portfolio";
 
 export default function Header() {
