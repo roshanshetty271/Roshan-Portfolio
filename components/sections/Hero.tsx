@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowDown, Github, Linkedin, Mail, MapPin, Quote, User, Terminal } from "lucide-react";
 import { personalInfo, contact, heroTypewriterWords } from "@/data/portfolio";
 
@@ -55,10 +56,10 @@ export default function Hero() {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5 }}
-                            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-charcoal-900 dark:bg-charcoal-950 border border-charcoal-700 text-xs font-mono mb-6 shadow-lg"
+                            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-charcoal-800 dark:bg-charcoal-900 border border-charcoal-700 text-xs font-mono mb-6 shadow-lg"
                         >
                             <span className="text-green-400">$</span>
-                            <span className="text-charcoal-400">status:</span>
+                            <span className="text-cream-400">status:</span>
                             <span className="relative flex h-2 w-2">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
@@ -168,10 +169,13 @@ export default function Hero() {
                         <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-tr from-copper-500/20 to-teal-500/20 rounded-[2rem] rotate-6 scale-105 blur-xl"></div>
                             <div className="relative w-64 h-72 lg:w-72 lg:h-80 bg-cream-50 dark:bg-charcoal-900 rounded-[2rem] border border-white/20 dark:border-white/10 shadow-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-500">
-                                <img
+                                <Image
                                     src="/Roshan-photo.jpg"
                                     alt="Roshan Shetty"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    sizes="(max-width: 1024px) 256px, 288px"
+                                    className="object-cover"
+                                    priority
                                 />
                             </div>
                         </div>

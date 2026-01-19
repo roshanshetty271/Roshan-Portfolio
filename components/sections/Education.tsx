@@ -6,7 +6,7 @@ import { education } from "@/data/portfolio";
 
 export default function Education() {
     return (
-        <section id="education" className="py-16 md:py-20 border-b border-charcoal-100 dark:border-charcoal-800">
+        <section id="education" className="py-12 md:py-16 border-b border-charcoal-100 dark:border-charcoal-800">
             <div className="container-custom">
                 {/* Section Header */}
                 <motion.div

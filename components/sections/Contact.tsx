@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Mail, MapPin, Github, Linkedin, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { contact, personalInfo } from "@/data/portfolio";
 
@@ -22,12 +22,6 @@ export default function Contact() {
       label: "Email",
       value: contact.email.primary,
       href: `mailto:${contact.email.primary}`,
-    },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: contact.phone,
-      href: `tel:${contact.phone}`,
     },
     {
       icon: MapPin,
@@ -238,10 +232,10 @@ export default function Contact() {
                   type="submit"
                   disabled={formStatus === "submitting" || formStatus === "success"}
                   className={`w-full px-6 py-3 font-medium rounded-lg transition-all duration-300 flex items-center justify-center gap-2 ${formStatus === "success"
-                      ? "bg-green-500 text-white"
-                      : formStatus === "error"
-                        ? "bg-red-500 text-white hover:bg-red-600"
-                        : "bg-copper-500 hover:bg-copper-600 text-white hover:shadow-lg hover:shadow-copper-500/25"
+                    ? "bg-green-500 text-white"
+                    : formStatus === "error"
+                      ? "bg-red-500 text-white hover:bg-red-600"
+                      : "bg-copper-500 hover:bg-copper-600 text-white hover:shadow-lg hover:shadow-copper-500/25"
                     } disabled:cursor-not-allowed`}
                 >
                   {formStatus === "submitting" && (

@@ -26,7 +26,6 @@ export const contact = {
     primary: "shetty.ros@northeastern.edu",
     secondary: "roshanshetty271@gmail.com",
   },
-  phone: "858-341-9356",
   linkedin: "https://linkedin.com/in/roshanshetty271",
   github: "https://github.com/roshanshetty271",
   portfolio: "https://roshanshetty271.wixsite.com/roshan-shetty",

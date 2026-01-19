@@ -59,7 +59,7 @@ export default function Projects() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.05 }}
                   className="group relative h-full flex flex-col bg-bg-secondary rounded-2xl overflow-hidden border border-border hover:border-copper-500/40 transition-all duration-500 hover:shadow-2xl hover:shadow-copper-500/10"
                 >
                   {/* Gradient Cover with Pattern Overlay */}
@@ -125,7 +125,7 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05 }}
                 className="group relative p-6 bg-white dark:bg-charcoal-800 rounded-2xl border border-charcoal-100 dark:border-charcoal-700 hover:border-transparent transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col h-full"
               >
                 {/* Hover Gradient Border */}

@@ -32,8 +32,15 @@ const config: Config = {
           300: "#ebe4da",
           400: "#ddd2c3",
         },
-        // Dark mode backgrounds
+        // Dark mode backgrounds and text
         charcoal: {
+          50: "#fafafa",
+          100: "#f4f4f5",
+          200: "#e4e4e7",
+          300: "#d4d4d8",
+          400: "#a1a1aa",
+          500: "#71717a",
+          600: "#52525b",
           700: "#2a2a2a",
           800: "#1f1f1f",
           900: "#171717",
