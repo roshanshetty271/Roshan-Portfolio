@@ -35,8 +35,7 @@ export const education = [
     location: "Boston, MA",
     degree: "Master of Science",
     field: "Information Systems",
-    graduationDate: "Dec 2025",
-    gpa: "3.8",
+
     coursework: [
       "Program Structure and Algorithms",
       "AI Agent Infrastructure",
@@ -51,8 +50,7 @@ export const education = [
     location: "Mumbai, India",
     degree: "Bachelor of Engineering",
     field: "Electronics and Telecommunication",
-    graduationDate: "Nov 2020",
-    gpa: "3.5",
+
     coursework: [
       "Structured Programming Approach",
       "Object-Oriented Programming using Java",
@@ -66,11 +64,10 @@ export const experience = [
     company: "Aosenuma",
     location: "Texas, USA",
     title: "AI Software Developer",
-    startDate: "Jan 2025",
-    endDate: "May 2025",
-    duration: "5 months",
+    startDate: "2025",
+    endDate: "2025",
     type: "Internship",
-    description: "Built AI-driven ESG Reporting Platform as sole frontend owner, implementing RAG pipelines and semantic search systems.",
+    description: "Built AI-driven enterprise reporting platform as sole frontend owner, implementing RAG pipelines and semantic search systems.",
     achievements: [
       "Built RAG-powered document querying system with OpenAI embeddings, pgvector, and Neo4j knowledge graphs for automated PDF/Excel/Word processing",
       "Developed semantic search with 300-dimensional embeddings and cosine similarity; created Python data pipelines with Flask REST APIs",
@@ -82,9 +79,8 @@ export const experience = [
     company: "Capgemini",
     location: "Mumbai, India",
     title: "Software Developer",
-    startDate: "Nov 2020",
-    endDate: "Jun 2023",
-    duration: "2 years 8 months",
+    startDate: "2020",
+    endDate: "2023",
     type: "Full-time",
     description: "Technical point of contact for enterprise SAP Inventory Manager application supporting 100+ global users.",
     achievements: [
@@ -440,9 +436,8 @@ export const currentlyBuilding = [
 // Typewriter words for hero section
 export const heroTypewriterWords = [
   "Full-Stack Developer",
-  "Frontend Specialist",
   "AI Engineer",
-  "Distributed Systems Builder",
+  "Frontend Specialist"
 ];
 
 // Resume download URL - update with actual path

@@ -42,7 +42,7 @@ export default function Experience() {
                     }`}
                 >
                   {/* Header */}
-                  <div className={`flex flex-col gap-2 ${index % 2 === 0 ? "md:items-end" : ""}`}>
+                  <div className={`flex flex-col items-start gap-2 ${index % 2 === 0 ? "md:items-end" : ""}`}>
                     <div className="flex items-center gap-2 text-copper-600 dark:text-copper-400">
                       <Briefcase size={16} />
                       <span className="font-medium">{job.company}</span>
@@ -57,11 +57,11 @@ export default function Experience() {
                       </span>
                       <span className="flex items-center gap-1">
                         <Calendar size={14} />
-                        {job.startDate} - {job.endDate}
+                        {job.startDate === job.endDate ? job.startDate : `${job.startDate} - ${job.endDate}`}
                       </span>
                     </div>
-                    {job.type === "Internship" && (
-                      <Badge variant="accent" size="sm">Internship</Badge>
+                    {job.type && (
+                      <Badge variant="accent" size="sm">{job.type}</Badge>
                     )}
                   </div>
 

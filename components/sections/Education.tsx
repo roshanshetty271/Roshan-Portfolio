@@ -32,7 +32,6 @@ export default function Education() {
                             transition={{ delay: index * 0.1 }}
                             className="group relative p-6 bg-cream-50 dark:bg-charcoal-800/50 rounded-xl border border-charcoal-100 dark:border-charcoal-700 hover:border-copper-500/30 transition-all duration-300"
                         >
-                            {/* Degree Badge */}
                             <div className="flex items-start justify-between mb-4">
                                 <div>
                                     <span className="inline-block px-3 py-1 text-xs font-mono bg-copper-100 dark:bg-copper-900/30 text-copper-600 dark:text-copper-400 rounded-md mb-2">
@@ -42,9 +41,6 @@ export default function Education() {
                                         {edu.field}
                                     </h3>
                                 </div>
-                                <span className="text-sm text-charcoal-400 dark:text-cream-500 font-mono">
-                                    GPA: {edu.gpa}
-                                </span>
                             </div>
 
                             {/* Institution */}
@@ -56,10 +52,6 @@ export default function Education() {
                                 <span className="flex items-center gap-1.5">
                                     <MapPin size={14} className="text-copper-500" />
                                     {edu.location}
-                                </span>
-                                <span className="flex items-center gap-1.5">
-                                    <Calendar size={14} className="text-copper-500" />
-                                    {edu.graduationDate}
                                 </span>
                             </div>
 

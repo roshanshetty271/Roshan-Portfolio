@@ -59,13 +59,17 @@ export default function Testimonials() {
         {/* Horizontal Scrolling Testimonials */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory scroll-smooth"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide scroll-smooth"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            WebkitOverflowScrolling: "touch"
+          }}
         >
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="flex-shrink-0 w-[85vw] md:w-[400px] snap-start"
+              className="flex-shrink-0 w-[85vw] md:w-[400px]"
             >
               <div className="h-full flex flex-col p-6 bg-white dark:bg-charcoal-800 rounded-xl border border-charcoal-100 dark:border-charcoal-700 shadow-sm hover:shadow-md transition-shadow duration-300">
                 {/* Highlight Quote */}
