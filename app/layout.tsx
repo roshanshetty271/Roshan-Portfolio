@@ -119,9 +119,9 @@ export default function RootLayout({
           <CursorFlashlight />
 
           {/* Main content */}
-          <div className="relative">
+          <div className="relative overflow-hidden">
             <Header />
-            <main>{children}</main>
+            <main className="relative overflow-x-hidden">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>

@@ -59,19 +59,15 @@ export default function Testimonials() {
         {/* Horizontal Scrolling Testimonials */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory"
+          className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory scroll-smooth"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {testimonials.map((testimonial, index) => (
-            <motion.div
+          {testimonials.map((testimonial) => (
+            <div
               key={testimonial.id}
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="flex-shrink-0 w-[350px] md:w-[400px] snap-start"
+              className="flex-shrink-0 w-[85vw] md:w-[400px] snap-start"
             >
-              <div className="h-full p-6 bg-white dark:bg-charcoal-800 rounded-xl border border-charcoal-100 dark:border-charcoal-700 shadow-sm">
+              <div className="h-full flex flex-col p-6 bg-white dark:bg-charcoal-800 rounded-xl border border-charcoal-100 dark:border-charcoal-700 shadow-sm hover:shadow-md transition-shadow duration-300">
                 {/* Highlight Quote */}
                 <div className="flex items-start gap-3 mb-4">
                   <Quote className="w-8 h-8 text-copper-400 flex-shrink-0" />
@@ -80,14 +76,14 @@ export default function Testimonials() {
                   </p>
                 </div>
 
-                {/* Truncated Quote */}
-                <p className="text-charcoal-600 dark:text-cream-400 text-sm leading-relaxed mb-6 line-clamp-4">
+                {/* Full Quote - No truncation */}
+                <p className="text-charcoal-600 dark:text-cream-400 text-sm leading-relaxed flex-grow">
                   {testimonial.quote}
                 </p>
 
-                {/* Author */}
-                <div className="flex items-center gap-3 pt-4 border-t border-charcoal-100 dark:border-charcoal-700">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-copper-500 to-copper-600 flex items-center justify-center text-white text-sm font-bold">
+                {/* Author - Always at bottom */}
+                <div className="flex items-center gap-3 pt-4 mt-6 border-t border-charcoal-100 dark:border-charcoal-700">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-copper-500 to-copper-600 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
                     {testimonial.author.split(" ").map(n => n[0]).join("")}
                   </div>
                   <div>
@@ -95,12 +91,12 @@ export default function Testimonials() {
                       {testimonial.author}
                     </p>
                     <p className="text-xs text-charcoal-500 dark:text-cream-500">
-                      {testimonial.company} • {testimonial.relationship}
+                      {testimonial.title} • {testimonial.company}
                     </p>
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 

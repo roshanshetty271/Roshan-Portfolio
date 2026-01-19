@@ -47,7 +47,7 @@ export default function Projects() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {topFeatured.map((project, index) => {
               const gradientClass = gradients[index % gradients.length];
               return (
@@ -117,7 +117,7 @@ export default function Projects() {
           <div className="h-px bg-charcoal-200 dark:bg-charcoal-800 flex-grow"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {remainingProjects.map((project, index) => {
             return (
               <motion.div
@@ -151,7 +151,7 @@ export default function Projects() {
                   {project.name}
                 </h3>
 
-                <p className="text-charcoal-600 dark:text-charcoal-300 text-sm mb-4 line-clamp-2 flex-grow leading-relaxed">
+                <p className="text-charcoal-600 dark:text-charcoal-300 text-sm mb-4 line-clamp-3 flex-grow leading-relaxed">
                   {project.description}
                 </p>
 

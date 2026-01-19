@@ -8,15 +8,13 @@ export const personalInfo = {
   tagline: "Full-Stack Software Engineer | AI/ML Enthusiast | 5x SAP Certified",
   headline: "Building intelligent systems that make a difference",
   location: "Boston, MA",
-  about: `I'm passionate about building impactful AI solutions. My recent internship at Aosenuma as an AI Software Developer solidified this, where I contributed to the end-to-end development of sophisticated AI-driven applications.
+  about: `Software developer with 3+ years of experience building full-stack enterprise applications and AI systems.
 
-This intensive AI-focused experience enhances my 2.5+ years in software engineering, which includes building enterprise solutions as an Associate Consultant at Capgemini. 
+Most recently at Aosenuma, I built RAG pipelines with OpenAI embeddings, semantic search with vector databases, and knowledge graphs using Neo4j for intelligent document processing. Before that, I spent nearly 3 years at Capgemini as a Software Developer, supporting 100+ global users and earning 5 SAP certifications.
 
-I am actively seeking full-time software development roles to apply my expertise in AI, full-stack engineering, and data-driven solutions to create innovative and meaningful impact.
+I work across the full stack. Python, Java, React, Node, and I have a strong interest in AI/ML systems. I enjoy turning complex technical problems into working solutions.
 
-What drives me is the intersection of practical engineering and emerging AI capabilities. I enjoy taking complex technical challenges and turning them into working solutions that people can actually use.
-
-Let's connect: shetty.ros@northeastern.edu`,
+Currently seeking full-time software engineering roles.`,
   openToWork: true,
   targetRoles: ["Full-Stack Developer", "Backend Engineer", "AI/ML Engineer", "Software Engineer"],
 };
@@ -226,6 +224,30 @@ export const otherProjects = [
     technologies: ["Python", "OpenCV", "Arduino", "Raspberry Pi", "IoT"],
     github: null,
   },
+  {
+    name: "Xerox Range Pricing Application",
+    description: "Business optimization application for pricing analysis with top negotiated solutions tracking.",
+    technologies: ["Java", "Java Swing"],
+    github: "https://github.com/roshanshetty271/Xerox-Range-Pricing-Application",
+  },
+  {
+    name: "HealthHub",
+    description: "Healthcare platform connecting patients with doctors, helpers, and support staff.",
+    technologies: ["Java", "Java Swing"],
+    github: "https://github.com/roshanshetty271/HealthHub",
+  },
+  {
+    name: "Alternative Coursera Platform",
+    description: "Educational platform with professor management, student registration, and reputation system.",
+    technologies: ["Java", "Java Swing"],
+    github: "https://github.com/roshanshetty271/Alternative-Coursera-Platform-",
+  },
+  {
+    name: "YouTube Clone",
+    description: "Video platform UI clone built with HTML and CSS.",
+    technologies: ["HTML", "CSS"],
+    github: "https://github.com/roshanshetty271/Youtube-Clone",
+  },
 ];
 
 export const certifications = [
@@ -267,16 +289,25 @@ export const certifications = [
 export const testimonials = [
   {
     id: 1,
-    quote: "I had the pleasure of working with Roshan during his internship as an AI Developer, and can confidently say he is a rising talent in AI software engineering. Roshan showed quality and strong attention to detail. What truly sets Roshan apart is his ability to learn fast. In just a few months, he evolved into a competent full-stack developer, operating multiple tools and successfully integrating AI solutions into production environments.",
+    quote: "Roshan exhibited a professional, proactive, and results-oriented attitude, making him a highly recommendable candidate for roles related to AI or software development. I am confident that Roshan will continue to achieve great success in his career and bring value to any team he joins.",
+    author: "Fabián Casaubon",
+    title: "CEO",
+    company: "Aosenuma",
+    relationship: "Executive",
+    highlight: "Professional, proactive, and results-oriented",
+  },
+  {
+    id: 2,
+    quote: "I had the pleasure of working with Roshan during his internship as an AI Developer, and can confidently say he is a rising talent in AI software engineering. Roshan showed quality and strong attention to detail. What truly sets Roshan apart is his ability to learn fast — in just a few months, he evolved into a competent full-stack developer, operating multiple tools and successfully integrating AI solutions into production environments.",
     author: "Jorge Domenzain",
-    title: "AI | Software & Consulting",
+    title: "CTO",
     company: "Aosenuma",
     relationship: "Manager",
     highlight: "A rising talent in AI software engineering",
   },
   {
-    id: 2,
-    quote: "From the start, Roshan brought a lot more than just enthusiasm. He brought real impact. He handled some of the more critical parts of the project, especially around analyzing structured documents. What stood out to me most was how dependable and proactive he was. He did not wait to be told what to do. He spotted what needed doing and jumped in.",
+    id: 3,
+    quote: "From the start, Roshan brought a lot more than just enthusiasm — he brought real impact. He handled some of the more critical parts of the project, especially around analyzing structured documents. What stood out to me most was how dependable and proactive he was. He didn't wait to be told what to do — he spotted what needed doing and jumped in.",
     author: "Sathwik Matcha",
     title: "AI Engineer | Data Science & Full-Stack",
     company: "Aosenuma",
@@ -284,7 +315,16 @@ export const testimonials = [
     highlight: "He spotted what needed doing and jumped in",
   },
   {
-    id: 3,
+    id: 4,
+    quote: "I was consistently impressed by his professionalism, strong technical abilities, and collaborative spirit. Roshan brings a unique combination of analytical thinking and hands-on development skills. He demonstrated a solid understanding of system design and consistently delivered high-quality code. His willingness to help others and positive attitude greatly contributed to our team's success.",
+    author: "Zenan Fan",
+    title: "Information Systems Student",
+    company: "Northeastern University",
+    relationship: "Colleague",
+    highlight: "Analytical thinking and hands-on development skills",
+  },
+  {
+    id: 5,
     quote: "Roshan has been an outstanding software developer on our team. During his time working on one of our most complex projects, he consistently delivered results that far exceeded expectations. His initiative was evident from the outset, as he proactively identified potential issues and implemented effective solutions. His positive attitude and commitment made him a role model for others.",
     author: "Israel Ayala Illan",
     title: "Electronics Engineer",
@@ -293,16 +333,34 @@ export const testimonials = [
     highlight: "Results that far exceeded expectations",
   },
   {
-    id: 4,
+    id: 6,
     quote: "Roshan was a fresher when we joined our project and he was given the responsibility to lead the SAP Syclo team and I can say that he did a tremendous job. He is technically very good and he did a great job as a developer and consultant. He also has great leadership and communication skills. We worked together for almost two years and I enjoyed working with him a lot.",
     author: "Harish VS",
     title: "Manager SAP PM",
     company: "Capgemini",
-    relationship: "Manager",
+    relationship: "Colleague",
     highlight: "Given responsibility to lead as a fresher",
   },
   {
-    id: 5,
+    id: 7,
+    quote: "I worked with Roshan on many requirements and developments related to SAP Syclo and Fiori and we also worked on resolving many issues together. I was particularly impressed with his ability to handle high priority issues. He also has excellent communication skills and he used to deal with Clients and users very well. He's very patient and a very helpful guy.",
+    author: "Tharun Kumar",
+    title: "SAP S/4 HANA SCM Consultant",
+    company: "Capgemini",
+    relationship: "Colleague",
+    highlight: "Ability to handle high priority issues",
+  },
+  {
+    id: 8,
+    quote: "We have worked together on a project, and I found him a highly skilled and dedicated professional. He is not only friendly and helpful but also goes above and beyond to maintain the team spirit. I have seen him working his way through challenges and crises using innovative approaches. He is such an inspiration for me, and I feel proud to have worked under his guidance.",
+    author: "Keerthana Krishna Murthy",
+    title: "Associate Consultant | SAP ABAP",
+    company: "Capgemini",
+    relationship: "Direct Report",
+    highlight: "Innovative approaches to tackling problems",
+  },
+  {
+    id: 9,
     quote: "Roshan is one of the greatest mentors that I had in my time that I worked with him. All that I know about Syclo application or consulting in general I came to know from him. Apart from work he is a great person with a very good attitude. It was a joyous experience to work with him.",
     author: "Saprativo Kundu",
     title: "Software Developer",

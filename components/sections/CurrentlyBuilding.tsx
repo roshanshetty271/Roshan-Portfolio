@@ -14,7 +14,7 @@ export default function CurrentlyBuilding() {
                     subtitle="Active projects I'm working on right now"
                 />
 
-                <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+                <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
                     {currentlyBuilding.map((project, index) => (
                         <motion.div
                             key={project.name}

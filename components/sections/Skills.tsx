@@ -99,7 +99,7 @@ export default function Skills() {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {skillCategories.map((category, index) => {
                         const items = getSkillItems(category.key);
 
@@ -108,8 +108,8 @@ export default function Skills() {
                                 key={category.name}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ delay: index * 0.1, duration: 0.4 }}
                                 className="group relative bg-bg-primary rounded-2xl overflow-hidden border border-border hover:border-copper-500/30 transition-all duration-500 hover:shadow-xl"
                             >
                                 {/* Gradient top accent */}
@@ -125,16 +125,12 @@ export default function Skills() {
 
                                     <div className="flex flex-wrap gap-2">
                                         {items.map((skill, skillIndex) => (
-                                            <motion.span
+                                            <span
                                                 key={skill}
-                                                initial={{ opacity: 0, scale: 0.8 }}
-                                                whileInView={{ opacity: 1, scale: 1 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: index * 0.05 + skillIndex * 0.03 }}
                                                 className="px-3 py-1.5 bg-bg-secondary text-sm font-medium rounded-lg text-text-secondary hover:text-copper-500 hover:bg-copper-500/10 transition-all cursor-default border border-transparent hover:border-copper-500/20"
                                             >
                                                 {skill}
-                                            </motion.span>
+                                            </span>
                                         ))}
                                     </div>
                                 </div>

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 interface SectionHeadingProps {
   title: string;
-  subtitle?: string;
+  subtitle?: string | React.ReactNode;
   align?: "left" | "center";
 }
 
@@ -22,7 +22,7 @@ export default function SectionHeading({ title, subtitle, align = "center" }: Se
         <span className="text-copper-500">.</span>
       </h2>
       {subtitle && (
-        <p className="mt-4 text-lg text-charcoal-600 dark:text-cream-400 max-w-2xl mx-auto">
+        <p className={`mt-4 text-lg text-charcoal-600 dark:text-cream-400 max-w-2xl ${align === "center" ? "mx-auto" : ""}`}>
           {subtitle}
         </p>
       )}
