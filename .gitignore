@@ -1,0 +1,61 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env*.local
+.env
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# AI/Development Context (not for recruiters)
+CONTEXT_FOR_AI.md
+dev-portfolios-that-get-u-hired.md
+minimalist_design_playbook.md
+PORTFOLIO_DESIGN_DOCUMENT.md
+portfolio_design_playbook.md
+
+# Gemini AI artifacts
+.gemini/
+
+# Development screenshots (not for recruiters)
+section_*.png
+hero_*.png
+skills_*.png
+projects_*.png
+theme_*.png
+*_success_*.png
+*_refined_*.png
+*_fixed_*.png
