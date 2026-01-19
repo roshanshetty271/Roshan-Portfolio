@@ -162,12 +162,12 @@ export default function Hero() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.7, delay: 0.4 }}
-                        className="hidden lg:flex flex-col items-center justify-center relative mt-[-20px]"
+                        className="hidden lg:flex flex-col items-center justify-center relative"
                     >
-                        {/* Photo Card - Slightly smaller to fit viewport */}
+                        {/* Photo Card - Reduced size */}
                         <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-tr from-copper-500/20 to-teal-500/20 rounded-[2rem] rotate-6 scale-105 blur-xl"></div>
-                            <div className="relative w-72 h-80 lg:w-80 lg:h-96 bg-cream-50 dark:bg-charcoal-900 rounded-[2rem] border border-white/20 dark:border-white/10 shadow-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-500">
+                            <div className="relative w-64 h-72 lg:w-72 lg:h-80 bg-cream-50 dark:bg-charcoal-900 rounded-[2rem] border border-white/20 dark:border-white/10 shadow-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-500">
                                 <img
                                     src="/Roshan-photo.jpg"
                                     alt="Roshan Shetty"
@@ -176,8 +176,8 @@ export default function Hero() {
                             </div>
                         </div>
 
-                        {/* Social Links - Moved here */}
-                        <div className="flex gap-4 mt-8">
+                        {/* Social Links */}
+                        <div className="flex gap-4 mt-4">
                             {socialLinks.map((link) => (
                                 <a
                                     key={link.label}
