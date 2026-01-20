@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, Download } from "lucide-react";
 import { useTheme } from "@/components/layout/ThemeProvider";
-import { navigation, personalInfo } from "@/data/portfolio";
+import { navigation, personalInfo, resumeUrl } from "@/data/portfolio";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,8 +43,8 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${isScrolled
-        ? "bg-cream-50/95 dark:bg-charcoal-950/95 backdrop-blur-sm shadow-sm border-b border-charcoal-200/50 dark:border-white/10"
-        : "bg-cream-50 dark:bg-charcoal-950 border-b border-transparent"
+        ? "bg-white/95 dark:bg-charcoal-950/95 backdrop-blur-sm shadow-sm border-b border-charcoal-200 dark:border-white/10"
+        : "bg-white dark:bg-charcoal-950 border-b border-charcoal-100 dark:border-transparent"
         }`}
     >
       <nav className="container-custom">
@@ -75,16 +75,17 @@ export default function Header() {
               </motion.a>
             ))}
 
-            {/* Theme Toggle */}
-            <motion.button
+            {/* Download Resume Button - Outline */}
+            <motion.a
+              href={resumeUrl}
+              download="Roshan_Shetty_Resume.pdf"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              onClick={toggleTheme}
-              className="p-2 rounded-full bg-cream-200 dark:bg-charcoal-800 text-charcoal-700 dark:text-cream-200 hover:bg-cream-300 dark:hover:bg-charcoal-700 transition-colors"
-              aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-charcoal-50 dark:bg-transparent border border-charcoal-300 dark:border-charcoal-600 text-charcoal-700 dark:text-cream-200 text-sm font-medium rounded-lg hover:border-copper-500 hover:text-copper-500 hover:bg-copper-50 dark:hover:text-copper-400 dark:hover:bg-transparent transition-colors"
             >
-              {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
-            </motion.button>
+              <Download size={16} />
+              Resume
+            </motion.a>
 
             {/* CTA Button */}
             <motion.a
@@ -95,6 +96,17 @@ export default function Header() {
             >
               Get in Touch
             </motion.a>
+
+            {/* Theme Toggle */}
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              onClick={toggleTheme}
+              className="p-2 rounded-full bg-cream-200 dark:bg-charcoal-800 text-charcoal-700 dark:text-cream-200 hover:bg-cream-300 dark:hover:bg-charcoal-700 transition-colors"
+              aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+            >
+              {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
+            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -157,8 +169,25 @@ export default function Header() {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.35 }}
+                  className="w-full max-w-xs"
+                >
+                  <a
+                    href={resumeUrl}
+                    download="Roshan_Shetty_Resume.pdf"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center justify-center gap-2 w-full py-3 border-2 border-charcoal-300 dark:border-charcoal-600 text-charcoal-700 dark:text-cream-200 text-base font-bold rounded-xl hover:border-copper-500 hover:text-copper-500 transition-colors"
+                  >
+                    <Download size={20} />
+                    Download Resume
+                  </a>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="mt-4 w-full max-w-xs"
+                  className="w-full max-w-xs"
                 >
                   <a
                     href="#contact"
