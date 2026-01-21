@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowDown, Github, Linkedin, Mail, MapPin, Quote, User, Terminal } from "lucide-react";
 import { personalInfo, contact, heroTypewriterWords } from "@/data/portfolio";
+import { GreetingBanner } from "@/components/ui/GreetingBanner";
 
 export default function Hero() {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -136,7 +137,12 @@ export default function Hero() {
                     </div>
 
                     {/* Right Content (Photo) - Order 1 on mobile, 2 on desktop */}
-                    <div className="order-1 lg:order-2 flex flex-col items-center justify-center relative mb-8 lg:mb-0 z-10">
+                    <div className="order-1 lg:order-2 flex flex-col items-center justify-center relative mb-8 lg:mb-0 z-10 h-[400px]">
+                        {/* Personalized Greeting - Fixed height container above photo */}
+                        <div className="h-8 flex items-center justify-center w-full mb-4">
+                            <GreetingBanner />
+                        </div>
+
                         <div className="relative mb-4">
                             <div className="absolute inset-0 bg-gradient-to-tr from-copper-500/20 to-teal-500/20 rounded-full lg:rounded-[2rem] rotate-6 scale-105 blur-xl"></div>
 
