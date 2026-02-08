@@ -140,20 +140,23 @@ export const featuredProjects = [
     github: null,
   },
   {
-    name: "RadioX Healthcare Platform",
-    subtitle: "Medical Imaging System",
-    date: "Sep 2023 - Dec 2023",
-    status: "completed",
-    category: ["Full-Stack", "Healthcare"],
-    description: "Full-stack healthcare management system with DICOM medical imaging viewer.",
+    name: "Worth The Watch",
+    subtitle: "Movie Recommendation & Verdict Platform",
+    date: "Jan 2026 - Present",
+    status: "in-progress",
+    category: ["AI/ML", "Web Development", "Full-Stack"],
+    description: "A data-driven movie review aggregator that determines if a movie is 'Worth the Watch' using sentiment analysis and aggregated user verdicts.",
     highlights: [
-      "Reduced medical imaging processing time by 25% with full-stack platform (React, TypeScript, Redux, Express/Node.js)",
-      "Implemented 22 REST API endpoints across 6 MongoDB collections with 9 interactive data visualization tools",
-      "Built browser-based DICOM medical imaging viewer, eliminating need for external viewing software",
+      "Built a modern, responsive frontend with Next.js and Tailwind CSS for optimal user experience",
+      "implemented a custom verdict algorithm to aggregate reviews and provide a binary recommendation",
+      "Designed a dynamic UI with glassmorphism effects and smooth animations",
+      "Deployed on Vercel for high performance and global availability",
     ],
-    technologies: ["React", "TypeScript", "Redux", "Express.js", "Node.js", "MongoDB", "REST APIs", "DICOM"],
-    github: "https://github.com/roshanshetty271/RadioX-Web-Application",
+    technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Vercel"],
+    github: "https://github.com/roshanshetty271/WorthTheWatch",
+    liveUrl: "https://worth-the-watch.vercel.app/",
   },
+
   {
     name: "Medical Insurance Plan API",
     subtitle: "RESTful Microservice",
@@ -194,6 +197,12 @@ export const otherProjects = [
     description: "Interactive chatbot for PDF document analysis and Q&A with real-time streaming responses.",
     technologies: ["Next.js", "React", "OpenAI API", "Tailwind CSS"],
     github: "https://github.com/roshanshetty271/PDF-ANALYZER-CHATBOT",
+  },
+  {
+    name: "RadioX Healthcare Platform",
+    description: "Full-stack healthcare management system with DICOM medical imaging viewer.",
+    technologies: ["React", "TypeScript", "Redux", "Express.js", "MongoDB"],
+    github: "https://github.com/roshanshetty271/RadioX-Web-Application",
   },
   {
     name: "VISUALify",
@@ -412,6 +421,16 @@ export const navigation = [
 // Currently building projects - shows active work
 export const currentlyBuilding = [
   {
+    name: "Worth The Watch",
+    subtitle: "Movie Recommendation & Verdict Platform",
+    description: "A next-generation entertainment review platform that synthesizes real user opinions to give clear 'WORTH IT' verdicts. Features AI-powered consensus, crowd wisdom aggregation, and spoiler-free summaries.",
+    progress: 70,
+    technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Vercel"],
+    github: "https://github.com/roshanshetty271/WorthTheWatch",
+    demo: "https://worth-the-watch.vercel.app/",
+    lastUpdated: "Feb 2026",
+  },
+  {
     name: "Recruiter Radar",
     subtitle: "AI-Powered Recruiting Platform",
     description: "Building semantic search with ChromaDB and OpenAI embeddings to match candidates beyond keyword filtering. FastAPI backend with 11 REST endpoints.",
@@ -419,7 +438,7 @@ export const currentlyBuilding = [
     technologies: ["Python", "FastAPI", "React", "Next.js", "ChromaDB", "OpenAI API"],
     github: "https://github.com/roshanshetty271/recruiter-radar",
     demo: null,
-    lastUpdated: "Jan 2026",
+    lastUpdated: "Feb 2026",
   },
   {
     name: "VISUALify",
@@ -429,7 +448,7 @@ export const currentlyBuilding = [
     technologies: ["TypeScript", "React", "Spotify API", "Canvas API"],
     github: "https://github.com/roshanshetty271/VISUALify",
     demo: null,
-    lastUpdated: "Jan 2026",
+    lastUpdated: "Feb 2026",
   },
 ];
 

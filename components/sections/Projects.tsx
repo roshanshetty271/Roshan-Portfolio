@@ -51,45 +51,81 @@ export default function Projects() {
             {topFeatured.map((project, index) => {
               const gradientClass = gradients[index % gradients.length];
               return (
-                <motion.a
+                <motion.div
                   key={project.name}
-                  href={project.github || "#"}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
                   className="group relative h-full flex flex-col bg-bg-secondary rounded-2xl overflow-hidden border border-border hover:border-copper-500/40 transition-all duration-500 hover:shadow-2xl hover:shadow-copper-500/10"
                 >
-                  {/* Gradient Cover with Pattern Overlay */}
-                  <div className={`h-48 w-full bg-gradient-to-br ${gradientClass} relative overflow-hidden flex-shrink-0`}>
-                    {/* Mesh pattern overlay */}
-                    <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[size:20px_20px]"></div>
+                  {/* Make the image/cover clickable */}
+                  <a
+                    href={project.liveUrl || project.github || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block relative overflow-hidden"
+                  >
+                    {/* Gradient Cover with Pattern Overlay */}
+                    <div className={`h-48 w-full bg-gradient-to-br ${gradientClass} relative overflow-hidden flex-shrink-0`}>
+                      {/* Mesh pattern overlay */}
+                      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[size:20px_20px]"></div>
 
-                    {/* Glow effect on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      {/* Glow effect on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                    {/* Featured Badge */}
-                    <div className="absolute top-4 left-4">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-full bg-white/20 backdrop-blur-md text-white border border-white/30">
-                        <Sparkles size={12} className="text-yellow-300" />
-                        Featured
-                      </span>
+                      {/* Featured Badge */}
+                      <div className="absolute top-4 left-4">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-full bg-white/20 backdrop-blur-md text-white border border-white/30">
+                          <Sparkles size={12} className="text-yellow-300" />
+                          Featured
+                        </span>
+                      </div>
+
+                      {/* Project icon/letter */}
+                      <div className="absolute bottom-4 right-4 w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white font-display text-2xl font-bold border border-white/30">
+                        {project.name.charAt(0)}
+                      </div>
                     </div>
-
-                    {/* Project icon/letter */}
-                    <div className="absolute bottom-4 right-4 w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white font-display text-2xl font-bold border border-white/30">
-                      {project.name.charAt(0)}
-                    </div>
-                  </div>
+                  </a>
 
                   <div className="p-6 flex flex-col flex-grow bg-charcoal-900 dark:bg-charcoal-800">
                     <div className="flex items-start justify-between mb-2">
-                      <h3 className="font-display text-xl font-bold text-cream-100 group-hover:text-copper-400 transition-colors">
-                        {project.name}
-                      </h3>
-                      <ArrowUpRight size={20} className="text-charcoal-500 group-hover:text-copper-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                      <a
+                        href={project.liveUrl || project.github || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group-hover:text-copper-400 transition-colors"
+                      >
+                        <h3 className="font-display text-xl font-bold text-cream-100">
+                          {project.name}
+                        </h3>
+                      </a>
+
+                      <div className="flex gap-2">
+                        {project.liveUrl && (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 rounded-lg bg-charcoal-800 text-charcoal-400 hover:text-copper-400 hover:bg-charcoal-700 transition-all"
+                            title="Live Demo"
+                          >
+                            <ExternalLink size={20} />
+                          </a>
+                        )}
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 rounded-lg bg-charcoal-800 text-charcoal-400 hover:text-copper-400 hover:bg-charcoal-700 transition-all"
+                            title="View Code"
+                          >
+                            <Github size={20} />
+                          </a>
+                        )}
+                      </div>
                     </div>
 
                     <p className="text-charcoal-400 text-sm mb-4 line-clamp-3 flex-grow">
@@ -104,7 +140,7 @@ export default function Projects() {
                       ))}
                     </div>
                   </div>
-                </motion.a>
+                </motion.div>
               );
             })}
           </div>
