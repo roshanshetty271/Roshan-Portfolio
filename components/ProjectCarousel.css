@@ -359,8 +359,21 @@
 
 @media (max-width: 480px) {
   .carousel-stage { height: 260px; }
-  .carousel-card  { width: 240px; height: 190px; }
+  .carousel-card  { width: 260px; height: 200px; }
   .carousel-header { padding: 0 16px; }
-  .overlay-logline { display: none; }
-  .overlay-tags { display: none; }
+  .card-overlay { padding: 12px; }
+  .overlay-title { font-size: 14px; margin-bottom: 4px; }
+  .overlay-logline {
+    font-size: 10px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .overlay-tags { gap: 2px; margin-bottom: 8px; }
+  .overlay-tag { font-size: 7px; padding: 1px 5px; letter-spacing: 0.1em; }
+  .overlay-links { gap: 10px; }
+  .overlay-link { font-size: 9px; }
 }

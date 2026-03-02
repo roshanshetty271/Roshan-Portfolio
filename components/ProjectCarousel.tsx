@@ -156,7 +156,7 @@ export default function ProjectCarousel({ featuredFilms, otherFilms }: ProjectCa
     <section className="carousel-section" id="work">
       <div className="carousel-header">
         <span className="carousel-eyebrow">Filmography</span>
-        <h2 className="carousel-title">Selected Work</h2>
+        <h2 className="carousel-title">Projects</h2>
 
         <div className="view-toggle">
           <button
@@ -208,14 +208,17 @@ export default function ProjectCarousel({ featuredFilms, otherFilms }: ProjectCa
                   }}
                 >
                   <div className="carousel-card-inner">
-                    <div style={{ position: "absolute", inset: 0 }}>
+                    <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
                       {film.screenshot ? (
-                        <Image
-                          src={film.screenshot}
-                          alt={film.title}
-                          fill
-                          style={{ objectFit: "cover", objectPosition: "top" }}
-                        />
+                        <div style={{ position: "relative", width: "100%", height: "100%" }}>
+                          <Image
+                            src={film.screenshot}
+                            alt={film.title}
+                            fill
+                            sizes="(max-width: 480px) 240px, (max-width: 768px) 280px, 520px"
+                            style={{ objectFit: "cover", objectPosition: "top" }}
+                          />
+                        </div>
                       ) : (
                         <div
                           className="screenshot-fallback"
