@@ -128,7 +128,7 @@ export default function Projects() {
                       </div>
                     </div>
 
-                    <p className="text-charcoal-400 text-sm mb-4 line-clamp-3 flex-grow">
+                    <p className="text-charcoal-400 text-sm mb-4 line-clamp-4 flex-grow">
                       {project.description}
                     </p>
 

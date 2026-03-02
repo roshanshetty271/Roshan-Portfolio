@@ -1,0 +1,426 @@
+/* ── Cinematic Portfolio Styles ─────────────────────────── */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+body {
+    background: #000000;
+    color: #FFFFFF;
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(212, 130, 74, 0.15);
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: .03;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+@keyframes hUp {
+    from {
+        opacity: 0;
+        transform: translateY(38px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ── Nav Links ─────────────────────────────────────────── */
+.nl {
+    font-family: 'Crimson Pro', serif;
+    font-size: 13px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color .2s;
+}
+
+.nl:hover {
+    color: #D4AF37;
+}
+
+.nl:focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 4px;
+}
+
+/* ── Film Cards ────────────────────────────────────────── */
+.fc {
+    border: none;
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .4s cubic-bezier(.4, 0, .2, 1), transform .4s cubic-bezier(.4, 0, .2, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border-radius: 8px;
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.35),
+        0 1px 3px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+}
+
+.fc::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(165deg, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+.fc:hover {
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.45),
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(212, 175, 55, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(-4px);
+}
+
+.fc:hover::before {
+    opacity: 1;
+}
+
+.fc:hover .ft {
+    color: #D4AF37;
+}
+
+.fc:hover .tag {
+    background: rgba(212, 175, 55, 0.1);
+    color: #D4AF37;
+}
+
+.ft {
+    font-family: 'Cormorant SC', serif;
+    font-weight: 300;
+    font-size: clamp(20px, 2.8vw, 34px);
+    letter-spacing: .06em;
+    color: #FFFFFF;
+    transition: color .3s;
+    line-height: 1;
+    position: relative;
+}
+
+/* ── Tags ──────────────────────────────────────────────── */
+.tag {
+    display: inline-block;
+    font-family: 'Crimson Pro', serif;
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    border: none;
+    padding: 5px 12px;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 3px;
+    transition: background .3s, color .3s, box-shadow .3s;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* ── Project Rows ──────────────────────────────────────── */
+.pr {
+    display: grid;
+    grid-template-columns: 52px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 20px;
+    border-bottom: none;
+    transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1), transform .3s cubic-bezier(.4, 0, .2, 1), background .3s;
+    cursor: default;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.2),
+        0 1px 2px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.pr:hover {
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.03) 100%);
+    box-shadow:
+        0 6px 24px rgba(0, 0, 0, 0.35),
+        0 2px 6px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.pr:hover .prt {
+    color: #D4AF37;
+}
+
+.prt {
+    font-family: 'Cormorant SC', serif;
+    font-weight: 300;
+    font-size: clamp(16px, 1.8vw, 22px);
+    letter-spacing: .05em;
+    color: #FFFFFF;
+    transition: color .2s;
+    line-height: 1.2;
+}
+
+/* ── CTA Buttons ───────────────────────────────────────── */
+.cp {
+    font-family: 'Crimson Pro', serif;
+    font-size: 13px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    background: #D4AF37;
+    color: #000000;
+    text-decoration: none;
+    padding: 14px 32px;
+    display: inline-block;
+    transition: background .3s;
+    font-weight: 400;
+    border-radius: 4px;
+}
+
+.cp:hover {
+    background: #FFFFFF;
+}
+
+.cp:focus-visible {
+    outline: 2px solid #FFFFFF;
+    outline-offset: 3px;
+}
+
+.cg {
+    font-family: 'Crimson Pro', serif;
+    font-size: 13px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    padding: 14px 32px;
+    display: inline-block;
+    transition: box-shadow .3s, color .3s, transform .3s;
+    font-weight: 300;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.cg:hover {
+    color: #D4AF37;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(212, 175, 55, 0.2);
+    transform: translateY(-1px);
+}
+
+.cg:focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 3px;
+}
+
+/* ── Small Links ───────────────────────────────────────── */
+.cs {
+    font-family: 'Crimson Pro', serif;
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #D4AF37;
+    text-decoration: none;
+    transition: opacity .2s;
+    position: relative;
+    z-index: 1;
+}
+
+.cs:hover {
+    opacity: .65;
+}
+
+.cs:focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 3px;
+}
+
+.cs-dim {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* ── Dot Buttons ───────────────────────────────────────── */
+.cdot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    padding: 12px;
+    background-clip: content-box;
+    transition: background .3s, transform .3s;
+}
+
+.cdot:focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 2px;
+}
+
+/* ── Critic Rows ───────────────────────────────────────── */
+.crow {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    cursor: pointer;
+    transition: opacity .3s;
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+}
+
+.crow:focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 2px;
+}
+
+/* ── Form Inputs ───────────────────────────────────────── */
+.fi {
+    width: 100%;
+    background: rgba(255, 255, 255, .05);
+    border: none;
+    color: #FFFFFF;
+    font-family: 'Crimson Pro', serif;
+    font-size: 16px;
+    padding: 16px 18px;
+    outline: none;
+    transition: box-shadow .3s;
+    border-radius: 6px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.fi:focus-visible {
+    box-shadow: 0 2px 16px rgba(212, 175, 55, 0.15), 0 0 0 2px rgba(212, 175, 55, 0.3);
+}
+
+.fi::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* ── Anti-Slop Interactions ────────────────────────────── */
+.brutal-hover {
+    transition: transform 0.15s cubic-bezier(0, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.brutal-hover:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0 0 #D4AF37;
+    /* Use accent for the pop */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .brutal-hover {
+        transition: none;
+    }
+
+    .brutal-hover:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .hg {
+        grid-template-columns: 1fr !important;
+    }
+
+    .hp {
+        display: none !important;
+    }
+
+    .tc {
+        grid-template-columns: 1fr !important;
+        gap: 48px !important;
+    }
+
+    .fg {
+        grid-template-columns: 1fr !important;
+    }
+
+    .hm {
+        display: none !important;
+    }
+
+    .eg {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    .pr {
+        grid-template-columns: 40px 1fr !important;
+    }
+
+    .prs {
+        display: none !important;
+    }
+
+    nav,
+    section,
+    footer {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+}

@@ -1,0 +1,40 @@
+# robots.txt — AI Bot Governance (2026)
+
+# === TRADITIONAL SEARCH ===
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# === AI RETRIEVAL BOTS (ALLOW — surfaces site in AI answers) ===
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# === AI TRAINING BOTS (BLOCK — scrapes for model training) ===
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# === GENERAL ===
+User-agent: *
+Allow: /
+
+Sitemap: https://roshanshetty.dev/sitemap.xml

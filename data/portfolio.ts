@@ -8,11 +8,11 @@ export const personalInfo = {
   tagline: "Full-Stack Software Engineer | AI/ML Enthusiast | 5x SAP Certified",
   headline: "Building intelligent systems that make a difference",
   location: "Boston, MA",
-  about: `Software developer with 3+ years of experience building full-stack enterprise applications and AI systems.
+  about: `Software Engineer with 3+ years of experience building full-stack applications and AI-powered systems.
 
-Most recently at Aosenuma, I built RAG pipelines with OpenAI embeddings, semantic search with vector databases, and knowledge graphs using Neo4j for intelligent document processing. Before that, I spent nearly 3 years at Capgemini as a Software Developer, supporting 100+ global users and earning 5 SAP certifications.
+Solo-built a production-deployed AI platform orchestrating 10+ APIs in parallel and a serverless AWS application with multi-agent LLM orchestration. Reduced global support tickets by 40% at Capgemini.
 
-I work across the full stack. Python, Java, React, Node, and I have a strong interest in AI/ML systems. I enjoy turning complex technical problems into working solutions.
+Proficient in Python, Java, TypeScript, REST APIs, and cloud infrastructure. Most recently at Aosenuma, I built RAG pipelines with OpenAI embeddings, semantic search with vector databases, and knowledge graphs using Neo4j. Before that, I spent nearly 3 years at Capgemini earning 5 SAP certifications.
 
 Currently seeking full-time software engineering roles.`,
   openToWork: true,
@@ -64,65 +64,97 @@ export const experience = [
     company: "Aosenuma",
     location: "Texas, USA",
     title: "AI Software Developer",
-    startDate: "2025",
-    endDate: "2025",
+    startDate: "Jan 2025",
+    endDate: "May 2025",
     type: "Internship",
-    description: "Built AI-driven enterprise reporting platform as sole frontend owner, implementing RAG pipelines and semantic search systems.",
+    description: "Built intelligent document querying system using RAG pipelines, semantic search, and knowledge graphs in a 4-person Agile team.",
     achievements: [
-      "Built RAG-powered document querying system with OpenAI embeddings, pgvector, and Neo4j knowledge graphs for automated PDF/Excel/Word processing",
-      "Developed semantic search with 300-dimensional embeddings and cosine similarity; created Python data pipelines with Flask REST APIs",
-      "Delivered full-stack platform (React/Next.js/TypeScript + Python) with 15 D3.js visualizations using Docker and CI/CD",
+      "Built intelligent document querying system using RAG pipeline with OpenAI embeddings, Supabase/pgvector, and Neo4j knowledge graphs, automating ingestion of 3 file types (PDF, Excel, Word) with semantic chunking (600-char windows, 200-char overlap) and Kafka pipelines for real-time processing",
+      "Developed semantic search with 300-dimensional embeddings and cosine similarity ranking; created Python data pipelines with Django REST Framework and GraphQL endpoints integrating PostgreSQL and Redis for real-time analytics",
+      "Delivered full-stack platform (React/Next.js/TypeScript + Python/Django) with 15 Recharts visualizations in a 4-person Agile team, shipping features weekly using Docker and CI/CD",
     ],
-    technologies: ["Python", "Flask", "Next.js", "React", "TypeScript", "OpenAI API", "Neo4j", "PostgreSQL", "pgvector", "Redis", "Supabase", "Docker", "D3.js", "AWS ECS"],
+    technologies: ["Python", "Django", "Next.js", "React", "TypeScript", "OpenAI API", "Neo4j", "PostgreSQL", "pgvector", "Redis", "Supabase", "Docker", "Recharts", "GraphQL", "Kafka"],
   },
   {
     company: "Capgemini",
     location: "Mumbai, India",
     title: "Software Developer",
-    startDate: "2020",
-    endDate: "2023",
+    startDate: "Nov 2020",
+    endDate: "Jun 2023",
     type: "Full-time",
-    description: "Technical point of contact for enterprise SAP Inventory Manager application supporting 100+ global users.",
+    description: "Technical point of contact for enterprise applications supporting 100+ global users.",
     achievements: [
-      "Reduced support tickets by 40% building enterprise web applications (JavaScript, HTML5, CSS3, Java, SAP ABAP) serving 100+ global users",
-      "Improved issue resolution time by 20% through application performance optimization and database query tuning",
-      "Managed complete SDLC in Agile environment; trained 5 team members, reducing onboarding time by 30%",
+      "Reduced support tickets by 40% as technical point of contact for 100+ global users, building enterprise web applications (JavaScript, VueJS, HTML5, CSS3, Java, SAP ABAP) and integrating C++ microservices with OpenSearch for advanced logging",
+      "Improved issue resolution time by 20% through performance optimization and database query tuning; managed complete SDLC from development through QA, deployment, and production support",
+      "Trained 5 team members on clean code standards, GraphQL API development, and Kafka-based event-driven architectures in an Agile environment, reducing onboarding time by 30%",
     ],
-    technologies: ["JavaScript", "HTML5", "CSS3", "SAP ABAP", "SAP HANA", "SAP Fiori", "Java", "SQL"],
+    technologies: ["JavaScript", "VueJS", "HTML5", "CSS3", "Java", "C++", "SAP ABAP", "SAP HANA", "SAP Fiori", "OpenSearch", "GraphQL", "Kafka", "SQL"],
   },
 ];
 
 export const skills = {
-  languages: ["Python", "Java", "JavaScript", "TypeScript", "SQL", "SAP ABAP", "C", "C++"],
+  languages: ["Python", "Java", "JavaScript", "TypeScript", "SQL", "C++"],
   aiml: {
     label: "AI/ML Technologies",
     items: ["RAG (Retrieval-Augmented Generation)", "Large Language Models", "OpenAI API", "Word2Vec", "Embeddings", "Semantic Search", "NLP", "Vector Databases"],
   },
   frontend: {
     label: "Frontend",
-    items: ["React.js", "Next.js", "Redux", "TypeScript", "HTML5", "CSS3", "D3.js", "Tailwind CSS"],
+    items: ["React.js", "Next.js", "Recharts", "TypeScript", "HTML5", "CSS3", "Tailwind CSS"],
   },
   backend: {
     label: "Backend & APIs",
-    items: ["Flask", "FastAPI", "Spring Boot", "Node.js", "Express.js", "REST APIs", "Microservices"],
+    items: ["Flask", "FastAPI", "Spring Boot", "Node.js", "Django", "REST APIs", "Microservices", "GraphQL"],
   },
   databases: {
     label: "Databases",
     sql: ["PostgreSQL", "MySQL", "Microsoft SQL Server", "SAP HANA"],
     nosql: ["MongoDB", "Redis", "Neo4j"],
-    vector: ["Qdrant", "ChromaDB", "pgvector", "Supabase"],
+    vector: ["Qdrant", "ChromaDB", "pgvector", "OpenSearch", "Elasticsearch"],
   },
   distributed: {
     label: "Distributed Systems",
-    items: ["Akka Cluster", "Actor Model", "RabbitMQ", "Elasticsearch", "Event-Driven Architecture"],
+    items: ["Akka Cluster", "Actor Model", "Kafka", "RabbitMQ", "Elasticsearch", "Event-Driven Architecture"],
   },
   devops: {
     label: "DevOps & Tools",
-    items: ["Docker", "Docker Compose", "AWS (ECS, EC2, S3)", "CI/CD", "Git", "GitHub", "Maven", "Agile/Scrum"],
+    items: ["AWS (Lambda, API Gateway, DynamoDB, Cognito, Bedrock, S3, SAM)", "Docker", "Docker Compose", "CI/CD", "Git", "GitHub", "Playwright", "Agile/Scrum"],
   },
 };
 
 export const featuredProjects = [
+  {
+    name: "Worth The Watch",
+    subtitle: "AI Movie Review Aggregator",
+    date: "Jan 2026 - Present",
+    status: "in-progress",
+    category: ["AI/ML", "Web Development", "Full-Stack"],
+    description: "Production AI movie review aggregator that scrapes 10+ critic sources and Reddit in real time, synthesizing opinions through a 4-stage async pipeline with 500+ titles indexed.",
+    highlights: [
+      "Solo-built and deployed a production AI movie review aggregator that scrapes 10+ critic sources and Reddit in real time, synthesizes opinions through a 4-stage async pipeline (asyncio.gather), and generates verdicts in 15 seconds with 500+ titles indexed",
+      "Engineered 3-tier LLM failover that never crashes, race-to-5 parallel fetching (2-3x faster than sequential) that cancels slower tasks on completion, and zero-cost regex opinion grep reducing 100K raw tokens to 5-8K before synthesis",
+      "Wrote 24 Playwright E2E tests across desktop and mobile with WCAG 2.0 AA auditing, GitHub Actions CI/CD against production, age-based TTL refresh, per-IP rate limiting, and Selectolax parsing (10–50x faster than BeautifulSoup)",
+    ],
+    technologies: ["Next.js", "FastAPI", "PostgreSQL", "Python", "React", "TypeScript", "Playwright", "Vercel"],
+    github: "https://github.com/roshanshetty271/WorthTheWatch",
+    liveUrl: "https://worth-the-watch.vercel.app/",
+  },
+  {
+    name: "Diverge",
+    subtitle: "AI Decision-Debate Platform",
+    date: "Feb 2026 - Present",
+    status: "in-progress",
+    category: ["AI/ML", "Cloud", "Full-Stack"],
+    description: "Serverless decision-debate platform on AWS with dual-Lambda architecture and multi-agent LLM orchestration. Semi-finalist in AWS 10,000 AIdeas competition.",
+    highlights: [
+      "Solo-built a serverless decision-debate platform on AWS using SAM (IaC) with dual-Lambda architecture: 300-second Function URL for long-running AI debates bypassing the API Gateway 29-second timeout, and a REST Lambda with Cognito authorizer for CRUD",
+      "Orchestrated 16 LLM invocations per debate session using Strands Agents SDK with two adversarial AI agents across 5 time-horizon rounds, token-level SSE streaming at 80ms batched updates, and domain-adaptive prompts across 7 decision categories",
+      "Integrated Monte Carlo financial simulation (1,000 runs), Amazon Comprehend sentiment tracking, Bedrock Knowledge Bases with local chunk fallback for RAG, and DynamoDB-backed fail-closed rate limiting with prompt injection detection",
+    ],
+    technologies: ["FastAPI", "React", "AWS SAM", "AWS Lambda", "AWS Bedrock", "AWS Cognito", "DynamoDB", "Strands Agents SDK"],
+    github: null,
+    badge: "AWS 10,000 AIdeas Semi-Finalist",
+  },
   {
     name: "DocuMind",
     subtitle: "Distributed AI Document Intelligence System",
@@ -131,30 +163,11 @@ export const featuredProjects = [
     category: ["AI/ML", "Distributed Systems", "Full-Stack"],
     description: "A distributed RAG system for intelligent document querying and analysis using Akka Cluster and semantic search.",
     highlights: [
-      "Architected distributed RAG system using Akka Cluster with fault-tolerant nodes and Actor Model for high availability",
-      "Built semantic search pipeline with Word2Vec (300-dim embeddings), Qdrant vector database, and sliding-window chunking",
-      "Integrated OpenAI GPT via Spring AI with custom prompt engineering for context-aware answer generation",
-      "Developed Java Spring Boot REST API with async endpoints and React frontend, containerized with Docker",
+      "Architected distributed RAG system using Akka Cluster with fault-tolerant nodes and Actor Model for concurrent query processing; integrated OpenAI GPT via Spring AI with custom prompt engineering, built REST API with async endpoints and React frontend",
+      "Built semantic search pipeline with Word2Vec (300-dim embeddings), Qdrant vector database, and sliding-window chunking (60% overlap) with keyword re-ranking for improved recall, containerized with Docker",
     ],
     technologies: ["Java", "Spring Boot", "Spring AI", "Akka Cluster", "Word2Vec", "Qdrant", "OpenAI GPT", "React", "Docker"],
     github: null,
-  },
-  {
-    name: "Worth The Watch",
-    subtitle: "Movie Recommendation & Verdict Platform",
-    date: "Jan 2026 - Present",
-    status: "in-progress",
-    category: ["AI/ML", "Web Development", "Full-Stack"],
-    description: "A data-driven movie review aggregator that determines if a movie is 'Worth the Watch' using sentiment analysis and aggregated user verdicts.",
-    highlights: [
-      "Built a modern, responsive frontend with Next.js and Tailwind CSS for optimal user experience",
-      "implemented a custom verdict algorithm to aggregate reviews and provide a binary recommendation",
-      "Designed a dynamic UI with glassmorphism effects and smooth animations",
-      "Deployed on Vercel for high performance and global availability",
-    ],
-    technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Vercel"],
-    github: "https://github.com/roshanshetty271/WorthTheWatch",
-    liveUrl: "https://worth-the-watch.vercel.app/",
   },
 
   {
@@ -422,12 +435,22 @@ export const navigation = [
 export const currentlyBuilding = [
   {
     name: "Worth The Watch",
-    subtitle: "Movie Recommendation & Verdict Platform",
-    description: "A next-generation entertainment review platform that synthesizes real user opinions to give clear 'WORTH IT' verdicts. Features AI-powered consensus, crowd wisdom aggregation, and spoiler-free summaries.",
+    subtitle: "AI Movie Review Aggregator",
+    description: "Production AI movie review aggregator scraping 10+ critic sources and Reddit in real time, synthesizing opinions through a 4-stage async pipeline with 3-tier LLM failover and 500+ titles indexed.",
     progress: 70,
-    technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Vercel"],
+    technologies: ["Next.js", "FastAPI", "PostgreSQL", "Python", "TypeScript", "Playwright"],
     github: "https://github.com/roshanshetty271/WorthTheWatch",
     demo: "https://worth-the-watch.vercel.app/",
+    lastUpdated: "Feb 2026",
+  },
+  {
+    name: "Diverge",
+    subtitle: "AI Decision-Debate Platform",
+    description: "Serverless decision-debate platform on AWS with dual-Lambda architecture, multi-agent LLM orchestration with 16 invocations per session, and Monte Carlo financial simulation. AWS 10,000 AIdeas Semi-Finalist.",
+    progress: 60,
+    technologies: ["FastAPI", "React", "AWS SAM", "AWS Lambda", "AWS Bedrock", "DynamoDB"],
+    github: null,
+    demo: null,
     lastUpdated: "Feb 2026",
   },
   {
