@@ -18,8 +18,8 @@ export const MotionProvider: FC<{ children: ReactNode }> = ({ children }) => {
 };
 
 /* ── useInView ─────────────────────────────────────────── */
-function useInView(threshold = 0.08): [React.RefObject<HTMLDivElement | null>, boolean] {
-    const ref = useRef<HTMLDivElement | null>(null);
+function useInView(threshold = 0.08): [React.RefObject<HTMLDivElement>, boolean] {
+    const ref = useRef<HTMLDivElement>(null!) as React.RefObject<HTMLDivElement>;
     const [visible, setVisible] = useState(false);
     useEffect(() => {
         const io = new IntersectionObserver(
