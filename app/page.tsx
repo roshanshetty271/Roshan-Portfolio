@@ -11,7 +11,7 @@ import { HeroParallaxBg } from "./components/HeroParallaxBg";
 import TestimonialCarousel from "./components/TestimonialCarousel";
 import ExperienceAccordion from "./components/ExperienceAccordion";
 import ProjectCarousel from "@/components/ProjectCarousel";
-import CinemaIntro from "@/components/CinemaIntro";
+// import CinemaIntro from "@/components/CinemaIntro";
 import ContactForm from "./components/ContactForm";
 import FeaturedProjectCard from "./components/FeaturedProjectCard";
 import SocialIcons from "./components/SocialIcons";
@@ -141,7 +141,6 @@ const skillGroups: SkillGroup[] = [
 export default function PortfolioPage() {
 
   return (
-    <CinemaIntro>
     <MotionProvider>
       <Nav />
 
@@ -364,6 +363,5 @@ export default function PortfolioPage() {
         </div>
       </footer>
     </MotionProvider>
-    </CinemaIntro>
   );
 }
