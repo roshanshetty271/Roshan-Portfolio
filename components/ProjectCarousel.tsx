@@ -6,15 +6,23 @@ import { C, type Film } from "@/app/components/palette";
 import ProjectToggle, { StatusPill } from "@/app/components/ProjectToggle";
 import "./ProjectCarousel.css";
 
-const CARD_W = 520;
-const CARD_H = 400;
-const SIDE_SCALE = 0.72;
-const SIDE_OFFSET = 380;
-const FAR_SCALE = 0.52;
-const FAR_OFFSET = 620;
+function useIsMobile(breakpoint = 768) {
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setMobile(window.innerWidth <= breakpoint);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, [breakpoint]);
+  return mobile;
+}
 
-function getCardStyle(offset: number): React.CSSProperties {
+function getCardStyle(offset: number, mobile: boolean): React.CSSProperties {
   const absOff = Math.abs(offset);
+  const sideOffset = mobile ? 200 : 380;
+  const farOffset = mobile ? 340 : 620;
+  const sideScale = mobile ? 0.65 : 0.72;
+  const farScale = mobile ? 0.45 : 0.52;
 
   if (absOff === 0) {
     return {
@@ -27,7 +35,7 @@ function getCardStyle(offset: number): React.CSSProperties {
   if (absOff === 1) {
     const dir = offset > 0 ? 1 : -1;
     return {
-      transform: `translateX(${dir * SIDE_OFFSET}px) translateZ(-180px) rotateY(${-dir * 38}deg) scale(${SIDE_SCALE})`,
+      transform: `translateX(${dir * sideOffset}px) translateZ(-180px) rotateY(${-dir * 38}deg) scale(${sideScale})`,
       filter: "brightness(0.55) blur(1.5px)",
       zIndex: 7,
       opacity: 0.85,
@@ -36,7 +44,7 @@ function getCardStyle(offset: number): React.CSSProperties {
   if (absOff === 2) {
     const dir = offset > 0 ? 1 : -1;
     return {
-      transform: `translateX(${dir * FAR_OFFSET}px) translateZ(-340px) rotateY(${-dir * 52}deg) scale(${FAR_SCALE})`,
+      transform: `translateX(${dir * farOffset}px) translateZ(-340px) rotateY(${-dir * 52}deg) scale(${farScale})`,
       filter: "brightness(0.3) blur(3px)",
       zIndex: 4,
       opacity: 0.5,
@@ -58,6 +66,7 @@ interface ProjectCarouselProps {
 
 export default function ProjectCarousel({ featuredFilms, otherFilms }: ProjectCarouselProps) {
   const [view, setView] = useState<"carousel" | "grid">("carousel");
+  const mobile = useIsMobile();
   const allFilms = [...featuredFilms, ...otherFilms];
 
   const [active, setActive] = useState(0);
@@ -185,7 +194,7 @@ export default function ProjectCarousel({ featuredFilms, otherFilms }: ProjectCa
                 ((i - active + total + Math.floor(total / 2)) % total) -
                 Math.floor(total / 2);
               const isActive = offset === 0;
-              const style = getCardStyle(offset);
+              const style = getCardStyle(offset, mobile);
 
               return (
                 <div

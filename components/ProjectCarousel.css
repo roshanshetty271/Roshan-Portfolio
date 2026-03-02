@@ -338,7 +338,29 @@
   padding: 0 48px;
 }
 
+@media (max-width: 900px) {
+  .carousel-section { padding: 80px 0 60px; }
+  .carousel-header { margin-bottom: 48px; padding: 0 24px; }
+  .grid-view { padding: 0 24px !important; }
+}
+
 @media (max-width: 768px) {
-  .carousel-stage { height: 340px; }
-  .carousel-card  { width: 300px; height: 260px; }
+  .carousel-stage { height: 300px; }
+  .carousel-card  { width: 280px; height: 220px; }
+  .carousel-nav { gap: 16px; margin-top: 28px; }
+  .nav-dots { gap: 5px; }
+  .overlay-logline { font-size: 11px; margin-bottom: 10px; }
+  .overlay-tags { gap: 3px; margin-bottom: 12px; }
+  .overlay-tag { font-size: 8px; padding: 2px 6px; }
+  .card-overlay { padding: 16px; }
+  .overlay-title { font-size: 16px; margin-bottom: 6px; }
+  .carousel-label-title { font-size: 20px; }
+}
+
+@media (max-width: 480px) {
+  .carousel-stage { height: 260px; }
+  .carousel-card  { width: 240px; height: 190px; }
+  .carousel-header { padding: 0 16px; }
+  .overlay-logline { display: none; }
+  .overlay-tags { display: none; }
 }

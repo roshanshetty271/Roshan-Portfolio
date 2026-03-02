@@ -24,7 +24,7 @@ const TestimonialCarousel: FC<Props> = ({ critics }) => {
                     <span style={{ display: "block", width: 48, height: 1, background: C.amber, margin: "18px 0" }} />
                 </Reveal>
                 <div className="tc" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1 }}>
-                    <Reveal delay={.1} style={{ paddingRight: 52, paddingBottom: 32 }}>
+                    <Reveal delay={.1} className="test-left" style={{ paddingRight: 52, paddingBottom: 32 }}>
                         <p style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: "italic", fontSize: "clamp(24px,3.2vw,44px)", lineHeight: 1.3, color: C.ink, fontWeight: 300 }}>&quot;{cur.pull}&quot;</p>
                         <p style={{ fontFamily: "'Crimson Pro',serif", fontSize: 18, lineHeight: 1.85, color: C.inkDim, marginTop: 22, fontStyle: "italic", fontWeight: 300 }}>{cur.body}</p>
                         <div style={{ marginTop: 24, display: "flex", alignItems: "center", gap: 12 }}>
@@ -41,7 +41,7 @@ const TestimonialCarousel: FC<Props> = ({ critics }) => {
                             <span style={{ fontFamily: "'Crimson Pro',serif", fontSize: 13, letterSpacing: ".14em", color: C.inkDim, marginLeft: 8, textTransform: "uppercase" }}>{active + 1} / {critics.length}</span>
                         </div>
                     </Reveal>
-                    <Reveal delay={.18} style={{ borderLeft: `1px solid ${C.inkGhost}`, paddingLeft: 52 }}>
+                    <Reveal delay={.18} className="test-right" style={{ borderLeft: `1px solid ${C.inkGhost}`, paddingLeft: 52 }}>
                         {critics.map((c, i) => (
                             <button key={i} onClick={() => setActive(i)} className="crow" style={{ opacity: i === active ? 1 : 0.28 }}>
                                 <p style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: "italic", fontSize: 18, color: C.ink, lineHeight: 1.4 }}>&quot;{c.pull}&quot;</p>

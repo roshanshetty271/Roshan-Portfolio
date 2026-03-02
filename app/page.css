@@ -381,10 +381,13 @@ body::after {
     }
 }
 
-/* ── Responsive ────────────────────────────────────────── */
+/* ── Responsive: Tablet ─────────────────────────────────── */
 @media (max-width: 900px) {
     .hg {
         grid-template-columns: 1fr !important;
+        padding-top: 100px !important;
+        padding-bottom: 48px !important;
+        gap: 32px !important;
     }
 
     .hp {
@@ -393,7 +396,7 @@ body::after {
 
     .tc {
         grid-template-columns: 1fr !important;
-        gap: 48px !important;
+        gap: 40px !important;
     }
 
     .fg {
@@ -406,7 +409,7 @@ body::after {
 
     .eg {
         grid-template-columns: 1fr !important;
-        gap: 16px !important;
+        gap: 12px !important;
     }
 
     .pr {
@@ -422,5 +425,91 @@ body::after {
     footer {
         padding-left: 24px !important;
         padding-right: 24px !important;
+    }
+
+    /* Nav: hide links, show hamburger */
+    .nav-links {
+        display: none !important;
+    }
+
+    .nav-resume {
+        display: none !important;
+    }
+
+    .nav-hamburger {
+        display: flex !important;
+    }
+
+    /* Testimonials: remove inline padding/border on mobile */
+    .test-left {
+        padding-right: 0 !important;
+    }
+
+    .test-right {
+        padding-left: 0 !important;
+        border-left: none !important;
+    }
+
+    /* Reduce section title decorative bars */
+    .section-flex-heading {
+        gap: 16px !important;
+    }
+}
+
+/* ── Responsive: Phone ─────────────────────────────────── */
+@media (max-width: 600px) {
+    .hg {
+        padding: 90px 16px 40px !important;
+    }
+
+    nav,
+    section,
+    footer {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    /* Hero: stack photo and name vertically */
+    .hero-identity {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 14px !important;
+    }
+
+    .hero-photo {
+        width: 80px !important;
+    }
+
+    /* CTA buttons: smaller on mobile */
+    .cp,
+    .cg {
+        padding: 12px 22px !important;
+        font-size: 12px !important;
+    }
+
+    /* Tags: tighter */
+    .tag {
+        font-size: 10px;
+        padding: 4px 8px;
+        letter-spacing: 0.12em;
+    }
+
+    /* Grid view */
+    .grid-view {
+        padding: 0 16px !important;
+    }
+
+    .tc {
+        gap: 32px !important;
+    }
+
+    /* Education cards */
+    .brutal-hover {
+        padding: 28px 20px !important;
+    }
+
+    /* Film cards */
+    .fc {
+        padding: 28px 20px;
     }
 }

@@ -155,8 +155,8 @@ export default function PortfolioPage() {
                 <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#6EE7A0", boxShadow: "0 0 8px #6EE7A0" }} />
                 <span style={{ fontFamily: "'Crimson Pro',serif", fontSize: 11, letterSpacing: ".22em", textTransform: "uppercase", color: C.inkDim, fontWeight: 300 }}>Available Full-Time</span>
               </div>
-              <div style={{ animation: "hUp 1.2s cubic-bezier(.16,1,.3,1) forwards", opacity: 0, display: "flex", alignItems: "stretch", gap: 20 }}>
-                <div style={{ width: 120, overflow: "hidden", border: `1px solid rgba(212,130,74,.3)`, flexShrink: 0, boxShadow: "0 4px 24px rgba(212,130,74,0.12), 0 0 0 1px rgba(212,130,74,0.08)", borderRadius: 4 }}>
+              <div className="hero-identity" style={{ animation: "hUp 1.2s cubic-bezier(.16,1,.3,1) forwards", opacity: 0, display: "flex", alignItems: "stretch", gap: 20 }}>
+                <div className="hero-photo" style={{ width: 120, overflow: "hidden", border: `1px solid rgba(212,130,74,.3)`, flexShrink: 0, boxShadow: "0 4px 24px rgba(212,130,74,0.12), 0 0 0 1px rgba(212,130,74,0.08)", borderRadius: 4 }}>
                   <Image src="/Roshan-photo.jpg" alt="Roshan Shetty" width={120} height={160} style={{ objectFit: "cover", objectPosition: "center top", width: "100%", height: "100%" }} priority />
                 </div>
                 <h1 style={{ fontFamily: "'Cormorant SC',serif", fontWeight: 300, fontSize: "clamp(32px,5vw,60px)", lineHeight: .88, letterSpacing: ".07em", display: "flex", flexDirection: "column", justifyContent: "center" }}>
@@ -209,7 +209,7 @@ export default function PortfolioPage() {
 
       {/* ─── EXPERIENCE (client accordion) ─────────────── */}
       <section id="experience" style={{ padding: "112px 48px", borderTop: `1px solid ${C.inkGhost}`, background: `linear-gradient(to bottom, transparent, rgba(255,255,255,.02), transparent)` }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        <div className="section-inner" style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
             <Eyebrow>Production History</Eyebrow><Rule />
             <div style={{ display: "flex", alignItems: "flex-start", gap: 32 }}>
