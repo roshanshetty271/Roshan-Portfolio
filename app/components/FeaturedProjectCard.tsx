@@ -1,7 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import { FC } from "react";
+import { useState, FC } from "react";
 import { C } from "./palette";
 
 interface Props {
@@ -10,6 +9,36 @@ interface Props {
     title: string;
     description: string;
     tags: string[];
+}
+
+function HeroImage({ src, alt }: { src: string; alt: string }) {
+    const [failed, setFailed] = useState(false);
+
+    if (failed) {
+        return (
+            <div style={{
+                position: "absolute", inset: 0,
+                background: `linear-gradient(165deg, rgba(212,175,55,0.15) 0%, rgba(0,0,0,0.9) 100%)`,
+                display: "flex", alignItems: "center", justifyContent: "center",
+            }}>
+                <span style={{
+                    fontFamily: "'Cormorant SC', serif", fontSize: 28, fontWeight: 300,
+                    color: "rgba(212,175,55,0.4)", letterSpacing: "0.1em",
+                }}>
+                    {alt[0]}
+                </span>
+            </div>
+        );
+    }
+
+    return (
+        <img
+            src={src}
+            alt={alt}
+            onError={() => setFailed(true)}
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+        />
+    );
 }
 
 const FeaturedProjectCard: FC<Props> = ({ href, imgSrc, title, description, tags }) => (
@@ -32,16 +61,13 @@ const FeaturedProjectCard: FC<Props> = ({ href, imgSrc, title, description, tags
                 onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-5px)"; e.currentTarget.style.boxShadow = "0 16px 48px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08)"; }}
                 onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 6px 24px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05)"; }}
             >
-                {/* Project Screenshot */}
                 <div style={{ position: "relative", width: "100%", aspectRatio: "2/1", overflow: "hidden" }}>
-                    <Image src={imgSrc} alt={title} fill style={{ objectFit: "cover" }} />
+                    <HeroImage src={imgSrc} alt={title} />
                     <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(7,11,18,.55) 0%, rgba(7,11,18,.15) 30%, transparent 50%)" }} />
-                    {/* Badge moved outside */}
                     <div style={{ position: "absolute", bottom: 12, right: 14 }}>
                         <span style={{ fontFamily: "'Crimson Pro',serif", fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: C.amber, textShadow: "0 1px 4px rgba(0,0,0,.6)" }}>View Live &rarr;</span>
                     </div>
                 </div>
-                {/* Card Body */}
                 <div style={{ padding: "16px 20px 18px" }}>
                     <div style={{ fontFamily: "'Cormorant SC',serif", fontSize: "clamp(18px,2vw,24px)", color: C.ink, letterSpacing: ".05em", lineHeight: 1.1 }}>{title}</div>
                     <p style={{ fontFamily: "'Crimson Pro',serif", fontSize: 12, color: C.inkDim, lineHeight: 1.65, marginTop: 6, fontWeight: 300 }}>{description}</p>
@@ -55,8 +81,7 @@ const FeaturedProjectCard: FC<Props> = ({ href, imgSrc, title, description, tags
                 </div>
             </div>
         </a>
-        {/* View More Projects */}
-        <a href="#work" style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 8, marginTop: 14, textDecoration: "none", transition: "opacity .2s" }}
+        <a href="#projects" style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 8, marginTop: 14, textDecoration: "none", transition: "opacity .2s" }}
             onMouseEnter={e => { e.currentTarget.style.opacity = "0.7"; }}
             onMouseLeave={e => { e.currentTarget.style.opacity = "1"; }}
         >

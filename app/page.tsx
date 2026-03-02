@@ -170,7 +170,7 @@ export default function PortfolioPage() {
               </p>
 
               <div style={{ animation: "hUp 1.2s cubic-bezier(.16,1,.3,1) .12s forwards", opacity: 0, marginTop: 28, display: "flex", gap: 14, alignItems: "center" }}>
-                <Magnetic><a href="#work" className="cp" style={{ display: "block" }}>View Work</a></Magnetic>
+                <Magnetic><a href="#projects" className="cp" style={{ display: "block" }}>View Projects</a></Magnetic>
                 <Magnetic><a href="#contact" className="cg" style={{ display: "block" }}>Get in Touch</a></Magnetic>
               </div>
 

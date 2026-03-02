@@ -1,10 +1,49 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
-import Image from "next/image";
 import { C, type Film } from "@/app/components/palette";
 import ProjectToggle, { StatusPill } from "@/app/components/ProjectToggle";
 import "./ProjectCarousel.css";
+
+function CardImage({ screenshot, title }: { screenshot?: string; title: string }) {
+  const [failed, setFailed] = useState(false);
+
+  if (!screenshot || failed) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          background: `linear-gradient(135deg, ${C.amberDim} 0%, rgba(0,0,0,0.95) 100%)`,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <span
+          style={{
+            fontFamily: "'Cormorant SC', serif",
+            fontSize: 32,
+            fontWeight: 300,
+            color: C.amberDim,
+            letterSpacing: "0.1em",
+          }}
+        >
+          {title[0]}
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={screenshot}
+      alt={title}
+      onError={() => setFailed(true)}
+      style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }}
+    />
+  );
+}
 
 function useIsMobile(breakpoint = 768) {
   const [mobile, setMobile] = useState(false);
@@ -153,7 +192,7 @@ export default function ProjectCarousel({ featuredFilms, otherFilms }: ProjectCa
   };
 
   return (
-    <section className="carousel-section" id="work">
+    <section className="carousel-section" id="projects">
       <div className="carousel-header">
         <span className="carousel-eyebrow">Filmography</span>
         <h2 className="carousel-title">Projects</h2>
@@ -208,42 +247,8 @@ export default function ProjectCarousel({ featuredFilms, otherFilms }: ProjectCa
                   }}
                 >
                   <div className="carousel-card-inner">
-                    <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
-                      {film.screenshot ? (
-                        <div style={{ position: "relative", width: "100%", height: "100%" }}>
-                          <Image
-                            src={film.screenshot}
-                            alt={film.title}
-                            fill
-                            sizes="(max-width: 480px) 240px, (max-width: 768px) 280px, 520px"
-                            style={{ objectFit: "cover", objectPosition: "top" }}
-                          />
-                        </div>
-                      ) : (
-                        <div
-                          className="screenshot-fallback"
-                          style={{
-                            position: "absolute",
-                            inset: 0,
-                            background: `linear-gradient(135deg, ${C.amberDim} 0%, rgba(0,0,0,0.95) 100%)`,
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <span
-                            style={{
-                              fontFamily: "'Cormorant SC', serif",
-                              fontSize: 32,
-                              fontWeight: 300,
-                              color: C.amberDim,
-                              letterSpacing: "0.1em",
-                            }}
-                          >
-                            {film.title[0]}
-                          </span>
-                        </div>
-                      )}
+                    <div style={{ position: "absolute", inset: 0 }}>
+                      <CardImage screenshot={film.screenshot} title={film.title} />
                     </div>
 
                     <div className="card-base-overlay" />

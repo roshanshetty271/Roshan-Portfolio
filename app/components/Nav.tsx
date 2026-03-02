@@ -32,7 +32,7 @@ export default function Nav() {
     }, [menuOpen]);
 
     const scrolled = scrollY > 80;
-    const links = ["Work", "Experience", "Education", "Skills", "Contact"] as const;
+    const links = ["Projects", "Experience", "Education", "Skills", "Contact"] as const;
 
     return (
         <>
