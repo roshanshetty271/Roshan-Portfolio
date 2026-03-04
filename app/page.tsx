@@ -18,7 +18,7 @@ import SocialIcons from "./components/SocialIcons";
 
 /* ── Static helpers (rendered at build time) ───────────── */
 const Eyebrow = ({ children }: { children: React.ReactNode }) => (
-  <span style={{ fontFamily: "'Crimson Pro', serif", fontSize: 11, letterSpacing: "0.35em", textTransform: "uppercase" as const, color: C.silver, fontWeight: 300, display: "block" }}>{children}</span>
+  <span style={{ fontFamily: "'Crimson Pro', serif", fontSize: 14, letterSpacing: "0.35em", textTransform: "uppercase" as const, color: C.amber, fontWeight: 300, display: "block" }}>{children}</span>
 );
 const Rule = () => <span style={{ display: "block", width: 48, height: 1, background: "#222", margin: "18px 0" }} />;
 const Divider = () => <hr style={{ border: "none", borderTop: `1px solid ${C.inkGhost}`, margin: 0 }} />;
@@ -150,7 +150,7 @@ export default function PortfolioPage() {
               </div>
 
               <p style={{ animation: "hUp 1.2s cubic-bezier(.16,1,.3,1) .08s forwards", opacity: 0, marginTop: 18, fontFamily: "'Crimson Pro',serif", fontStyle: "italic", fontSize: "clamp(13px, 1.4vw, 16px)", letterSpacing: ".04em", color: "rgba(232,215,175,0.5)", fontWeight: 300, lineHeight: 1.5 }}>
-                AI Engineer &amp; Full-Stack Developer &middot; Building Intelligent Systems
+                Full Stack Software Developer &amp; AI Engineer &middot; Building Intelligent Systems
               </p>
 
               <div style={{ animation: "hUp 1.2s cubic-bezier(.16,1,.3,1) .12s forwards", opacity: 0, marginTop: 28, display: "flex", gap: 14, alignItems: "center" }}>
@@ -198,7 +198,7 @@ export default function PortfolioPage() {
             <Eyebrow>Production History</Eyebrow><Rule />
             <div style={{ display: "flex", alignItems: "flex-start", gap: 32 }}>
               <div style={{ width: 2, height: 90, background: C.amber, marginTop: 12 }} />
-              <h2 style={{ fontFamily: "'Cormorant SC',serif", fontWeight: 300, fontSize: "clamp(38px,7.5vw,92px)", lineHeight: .9, letterSpacing: ".07em", marginBottom: 64, textWrap: "balance" as const }}>Experience</h2>
+              <h2 style={{ fontFamily: "'Cormorant SC',serif", fontWeight: 300, fontSize: "clamp(26px,4vw,50px)", lineHeight: .9, letterSpacing: ".07em", marginBottom: 64, textWrap: "balance" as const }}>Experience</h2>
             </div>
           </Reveal>
           <ExperienceAccordion experiences={experiences} />
@@ -243,7 +243,7 @@ export default function PortfolioPage() {
             <Eyebrow>Technical Arsenal</Eyebrow><Rule />
             <div style={{ display: "flex", alignItems: "flex-start", gap: 24 }}>
               <div style={{ width: 2, height: 50, background: C.amber, marginTop: 6 }} />
-              <h2 style={{ fontFamily: "'Cormorant SC',serif", fontWeight: 300, fontSize: "clamp(30px,4.5vw,56px)", lineHeight: .9, letterSpacing: ".07em", marginBottom: 56 }}>Skills</h2>
+              <h2 style={{ fontFamily: "'Cormorant SC',serif", fontWeight: 300, fontSize: "clamp(26px,4vw,50px)", lineHeight: .9, letterSpacing: ".07em", marginBottom: 56 }}>Skills</h2>
             </div>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 16 }}>
@@ -267,7 +267,7 @@ export default function PortfolioPage() {
               <Eyebrow>About</Eyebrow><Rule />
               <div style={{ display: "flex", alignItems: "flex-start", gap: 24 }}>
                 <div style={{ width: 2, height: 45, background: C.amber, marginTop: 6 }} />
-                <h2 style={{ fontFamily: "'Cormorant SC',serif", fontWeight: 300, fontSize: "clamp(28px,4vw,48px)", lineHeight: .9, letterSpacing: ".07em", marginBottom: 28 }}>About Me</h2>
+                <h2 style={{ fontFamily: "'Cormorant SC',serif", fontWeight: 300, fontSize: "clamp(26px,4vw,50px)", lineHeight: .9, letterSpacing: ".07em", marginBottom: 28 }}>About Me</h2>
               </div>
               <p style={{ fontFamily: "'Crimson Pro',serif", fontSize: "clamp(13px,1.4vw,15px)", lineHeight: 1.9, color: C.inkDim, fontWeight: 300, marginBottom: 14 }}>
                 Software Engineer with 3+ years of experience building full-stack applications and AI-powered systems. Solo-built a production-deployed AI platform orchestrating 10+ APIs in parallel and a serverless AWS application with multi-agent LLM orchestration.
@@ -303,7 +303,7 @@ export default function PortfolioPage() {
               <Eyebrow>Contact</Eyebrow><Rule />
               <div style={{ display: "flex", alignItems: "flex-start", gap: 24 }}>
                 <div style={{ width: 3, height: 110, background: C.amber, marginTop: 8 }} />
-                <h2 style={{ fontFamily: "'Cormorant SC',serif", fontWeight: 300, fontSize: "clamp(32px,5vw,64px)", lineHeight: .88, letterSpacing: ".07em", marginBottom: 28 }}>
+                <h2 style={{ fontFamily: "'Cormorant SC',serif", fontWeight: 300, fontSize: "clamp(26px,4vw,50px)", lineHeight: .88, letterSpacing: ".07em", marginBottom: 28 }}>
                   Get in<br /><span style={{ color: "transparent", WebkitTextStroke: `1px rgba(255,255,255,.18)` }}>Touch.</span>
                 </h2>
               </div>
@@ -335,14 +335,14 @@ export default function PortfolioPage() {
       <footer style={{ padding: "48px 48px 28px", borderTop: `1px solid ${C.inkGhost}` }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 32 }}>
-            <div style={{ fontFamily: "'Cormorant SC',serif", fontSize: 13, letterSpacing: ".4em", color: C.inkGhost }}>Roshan Shetty</div>
-            <div style={{ fontFamily: "'Crimson Pro',serif", fontSize: 11, letterSpacing: ".24em", color: C.inkGhost, marginTop: 5, textTransform: "uppercase" }}>Boston, MA</div>
+            <div style={{ fontFamily: "'Cormorant SC',serif", fontSize: 18, letterSpacing: ".4em", color: C.inkGhost }}>Roshan Shetty</div>
+            <div style={{ fontFamily: "'Crimson Pro',serif", fontSize: 14, letterSpacing: ".24em", color: C.inkGhost, marginTop: 5, textTransform: "uppercase" }}>Boston, MA</div>
           </div>
           <Divider />
           <div style={{ marginTop: 22, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 14 }}>
             <span style={{ fontFamily: "'Cormorant SC',serif", fontSize: 16, letterSpacing: ".1em", color: C.amber }}>RS</span>
-            <span style={{ fontFamily: "'Crimson Pro',serif", fontSize: 12, color: C.inkDim }}>Full-Stack Software Engineer</span>
-            <span style={{ fontFamily: "'Crimson Pro',serif", fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: C.inkGhost }}>&copy; 2026</span>
+            <span style={{ fontFamily: "'Crimson Pro',serif", fontSize: 14, color: C.inkDim }}>Full-Stack Software Engineer</span>
+            <span style={{ fontFamily: "'Crimson Pro',serif", fontSize: 13, letterSpacing: ".18em", textTransform: "uppercase", color: C.inkGhost }}>&copy; 2026</span>
           </div>
         </div>
       </footer>

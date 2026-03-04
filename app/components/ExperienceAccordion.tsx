@@ -38,9 +38,9 @@ const ExperienceAccordion: FC<Props> = ({ experiences }) => {
                             <div className="eg" style={{ display: "grid", gridTemplateColumns: "2fr 3fr", gap: 44, padding: "48px 0 36px", alignItems: "start" }}>
                                 <div>
                                     <div style={{ fontFamily: "'Cormorant SC',serif", fontWeight: 300, fontSize: "clamp(24px,3.8vw,52px)", lineHeight: 1, color: C.ink, letterSpacing: ".05em" }}>{exp.company}</div>
-                                    <div style={{ fontFamily: "'Crimson Pro',serif", fontSize: 12, letterSpacing: ".18em", textTransform: "uppercase", color: C.inkDim, marginTop: 10 }}>{exp.period}</div>
-                                    <div style={{ fontFamily: "'Crimson Pro',serif", fontSize: 12, letterSpacing: ".13em", textTransform: "uppercase", color: C.inkGhost, marginTop: 3 }}>{exp.location}</div>
-                                    <div style={{ fontFamily: "'Crimson Pro',serif", fontSize: 12, letterSpacing: ".13em", textTransform: "uppercase", color: "rgba(255,255,255,.2)", marginTop: 3 }}>{exp.type}</div>
+                                    <div style={{ fontFamily: "'Crimson Pro',serif", fontSize: 14, letterSpacing: ".18em", textTransform: "uppercase", color: C.inkDim, marginTop: 10 }}>{exp.period}</div>
+                                    <div style={{ fontFamily: "'Crimson Pro',serif", fontSize: 14, letterSpacing: ".13em", textTransform: "uppercase", color: C.inkGhost, marginTop: 3 }}>{exp.location}</div>
+                                    <div style={{ fontFamily: "'Crimson Pro',serif", fontSize: 14, letterSpacing: ".13em", textTransform: "uppercase", color: "rgba(255,255,255,.2)", marginTop: 3 }}>{exp.type}</div>
                                 </div>
                                 <div>
                                     <div style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: "italic", fontSize: "clamp(15px,1.7vw,20px)", color: C.ink, fontWeight: 300, marginBottom: 10 }}>{exp.role}</div>
