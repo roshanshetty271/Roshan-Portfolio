@@ -69,6 +69,7 @@ const featuredFilms: Film[] = [
     logline: "Upload documents and ask questions in natural language. Distributed RAG system using Akka Cluster with fault-tolerant nodes and Actor Model for concurrent query processing. OpenAI GPT via Spring AI, semantic search with Word2Vec embeddings, Qdrant vector DB, and sliding-window chunking with keyword re-ranking.",
     tags: ["Java", "Spring Boot", "Akka Cluster", "Qdrant", "Word2Vec", "Docker"],
     status: "COMPLETED",
+    screenshot: "/projects/documind.png",
     featured: true,
   },
 ];

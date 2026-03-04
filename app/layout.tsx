@@ -216,6 +216,7 @@ export default function RootLayout({
       </head>
       <body style={{ background: "#070B12", color: "#E8E0D0" }}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
