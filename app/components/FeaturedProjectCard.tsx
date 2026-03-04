@@ -90,13 +90,7 @@ const FeaturedProjectCard: FC<Props> = ({ href, imgSrc, title, description, tags
                     }}
                 >
 
-                    {/* Amber edge glow */}
-                    <div style={{
-                        position: "absolute", inset: -1, zIndex: 2, pointerEvents: "none",
-                        borderRadius: 13,
-                        background: "transparent",
-                        boxShadow: "inset 0 0 30px rgba(212,175,55,0.08), 0 0 40px rgba(212,175,55,0.05)",
-                    }} />
+
 
                     <div style={{ position: "relative", width: "100%", aspectRatio: "2/1", overflow: "hidden" }}>
                         <HeroImage src={imgSrc} alt={title} />
@@ -114,13 +108,12 @@ const FeaturedProjectCard: FC<Props> = ({ href, imgSrc, title, description, tags
                     </div>
                     <div style={{
                         padding: "18px 22px 20px",
-                        background: "linear-gradient(to bottom, rgba(255,255,255,0.06), rgba(255,255,255,0.02))",
+                        background: "transparent",
                         borderTop: "1px solid rgba(255,255,255,0.08)",
                     }}>
                         <div style={{
                             fontFamily: "'Cormorant SC',serif", fontSize: "clamp(18px,2vw,24px)",
                             color: "#fff", letterSpacing: ".05em", lineHeight: 1.1,
-                            textShadow: "0 0 20px rgba(212,175,55,0.15)",
                         }}>{title}</div>
                         <p style={{ fontFamily: "'Crimson Pro',serif", fontSize: 13, color: "rgba(232,224,208,0.7)", lineHeight: 1.7, marginTop: 8, fontWeight: 300 }}>{description}</p>
                         <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginTop: 12 }}>
@@ -128,9 +121,9 @@ const FeaturedProjectCard: FC<Props> = ({ href, imgSrc, title, description, tags
                                 <span key={t} style={{
                                     fontFamily: "'Crimson Pro',serif", fontSize: 10, letterSpacing: ".15em",
                                     textTransform: "uppercase", padding: "4px 10px",
-                                    border: "1px solid rgba(212,175,55,0.2)",
+                                    border: "1px solid rgba(255,255,255,0.12)",
                                     borderRadius: 4,
-                                    background: "rgba(212,175,55,0.06)",
+                                    background: "rgba(255,255,255,0.05)",
                                     color: "rgba(232,224,208,0.8)",
                                     backdropFilter: "blur(8px)",
                                     boxShadow: "0 1px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.06)",
