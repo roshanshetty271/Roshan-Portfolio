@@ -219,8 +219,8 @@ export const otherProjects = [
   },
   {
     name: "VISUALify",
-    description: "Real-time Spotify music visualization web application.",
-    technologies: ["TypeScript", "Spotify API"],
+    description: "Real-time Spotify music visualization and deep listening analytics. Four immersive D3.js modes — Galaxy, Terrain, Neural, and River — all BPM-synced to your music.",
+    technologies: ["Next.js", "TypeScript", "D3.js", "Spotify API", "NextAuth", "Tailwind CSS"],
     github: "https://github.com/roshanshetty271/VISUALify",
     status: "in-progress",
   },
@@ -465,13 +465,13 @@ export const currentlyBuilding = [
   },
   {
     name: "VISUALify",
-    subtitle: "Spotify Music Visualization",
-    description: "Real-time audio visualization synchronized with Spotify playback. Building with TypeScript and the Spotify Web API.",
-    progress: 30,
-    technologies: ["TypeScript", "React", "Spotify API", "Canvas API"],
+    subtitle: "Spotify Music Visualization & Analytics",
+    description: "Real-time Spotify music visualization and deep listening analytics. Transforms playback into immersive D3.js visualizations across four modes — Galaxy, Terrain, Neural, and River — all BPM-synced to your music.",
+    progress: 70,
+    technologies: ["Next.js", "TypeScript", "D3.js", "Spotify API", "NextAuth", "Tailwind CSS"],
     github: "https://github.com/roshanshetty271/VISUALify",
-    demo: null,
-    lastUpdated: "Feb 2026",
+    demo: "https://visualify-nine.vercel.app/",
+    lastUpdated: "Mar 2026",
   },
 ];
 

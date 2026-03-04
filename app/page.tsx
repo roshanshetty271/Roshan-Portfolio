@@ -48,8 +48,8 @@ const featuredFilms: Film[] = [
   },
   {
     chapter: "III", title: "VISUALify",
-    logline: "Connects to your Spotify and turns whatever you're listening to into real-time D3.js visualizations. Four immersive modes — Galaxy, Terrain, Neural, and River — all BPM-synced to the beat of your music.",
-    tags: ["Next.js", "TypeScript", "D3.js", "Spotify API", "NextAuth"],
+    logline: "Real-time Spotify music visualization and deep listening analytics. Transforms your Spotify playback into an immersive sensory experience by combining real-time song data with advanced audio analysis. Four immersive D3.js visualization modes — Galaxy, Terrain, Neural, and River — all BPM-synced to the beat of your music, with deep insights into your musical journey.",
+    tags: ["Next.js", "TypeScript", "D3.js", "Spotify API", "NextAuth", "Tailwind CSS"],
     status: "IN PRODUCTION",
     liveHref: "https://visualify-nine.vercel.app/",
     githubHref: "https://github.com/roshanshetty271/VISUALify",
