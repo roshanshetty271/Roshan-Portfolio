@@ -2,7 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from "react";
 import { C, type Film } from "@/app/components/palette";
-import ProjectToggle, { StatusPill } from "@/app/components/ProjectToggle";
+import { StatusPill } from "@/app/components/ProjectToggle";
 import "./ProjectCarousel.css";
 
 function CardImage({ screenshot, title }: { screenshot?: string; title: string }) {
@@ -58,8 +58,8 @@ function useIsMobile(breakpoint = 768) {
 
 function getCardStyle(offset: number, mobile: boolean): React.CSSProperties {
   const absOff = Math.abs(offset);
-  const sideOffset = mobile ? 200 : 380;
-  const farOffset = mobile ? 340 : 620;
+  const sideOffset = mobile ? 200 : 440;
+  const farOffset = mobile ? 340 : 700;
   const sideScale = mobile ? 0.65 : 0.72;
   const farScale = mobile ? 0.45 : 0.52;
 
@@ -247,49 +247,34 @@ export default function ProjectCarousel({ featuredFilms, otherFilms }: ProjectCa
                   }}
                 >
                   <div className="carousel-card-inner">
-                    <div style={{ position: "absolute", inset: 0 }}>
+                    <div className="card-img-section">
                       <CardImage screenshot={film.screenshot} title={film.title} />
                     </div>
-
-                    <div className="card-base-overlay" />
-
-                    {isActive && (
-                      <div className="card-overlay">
-                        <div className="overlay-title">{film.title}</div>
-                        <p className="overlay-logline">{film.logline}</p>
-                        <div className="overlay-tags">
-                          {film.tags.map((t) => (
-                            <span key={t} className="overlay-tag">
-                              {t}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="overlay-links">
-                          {film.liveHref && (
-                            <a
-                              href={film.liveHref}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="overlay-link live"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              Live &#8599;
-                            </a>
-                          )}
-                          {film.githubHref && (
-                            <a
-                              href={film.githubHref}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="overlay-link gh"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              GitHub &#8599;
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    )}
+                    <div className="card-info-section">
+                      <div className="overlay-title">{film.title}</div>
+                      {isActive && (
+                        <>
+                          <p className="overlay-logline">{film.logline}</p>
+                          <div className="overlay-tags">
+                            {film.tags.map((t) => (
+                              <span key={t} className="overlay-tag">{t}</span>
+                            ))}
+                          </div>
+                          <div className="overlay-links">
+                            {film.liveHref && (
+                              <a href={film.liveHref} target="_blank" rel="noopener noreferrer" className="overlay-link live" onClick={(e) => e.stopPropagation()}>
+                                Live &#8599;
+                              </a>
+                            )}
+                            {film.githubHref && (
+                              <a href={film.githubHref} target="_blank" rel="noopener noreferrer" className="overlay-link gh" onClick={(e) => e.stopPropagation()}>
+                                GitHub &#8599;
+                              </a>
+                            )}
+                          </div>
+                        </>
+                      )}
+                    </div>
                   </div>
                 </div>
               );
@@ -342,27 +327,29 @@ export default function ProjectCarousel({ featuredFilms, otherFilms }: ProjectCa
         </>
       ) : (
         <div className="grid-view">
-          <div className="fg" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20, marginBottom: 20 }}>
-            {featuredFilms.map((film) => (
-              <div key={film.title} className="fc">
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 24, position: "relative", zIndex: 1 }}>
-                  <span style={{ fontFamily: "'Cormorant SC',serif", fontSize: 12, letterSpacing: ".28em", color: C.amber, opacity: .6 }}>Ch. {film.chapter}</span>
-                  <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-                    {film.badge ? <span style={{ fontFamily: "'Crimson Pro',serif", fontSize: 10, letterSpacing: ".1em", textTransform: "uppercase", color: C.amber, border: `1px solid ${C.amberDim}`, padding: "2px 6px", borderRadius: 2, background: "rgba(0,0,0,0.3)" }}>{film.badge}</span> : null}
+          <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+            {allFilms.map((film) => (
+              <div key={film.title} className="fc grid-card">
+                {film.screenshot && (
+                  <div className="grid-card-img">
+                    <CardImage screenshot={film.screenshot} title={film.title} />
+                  </div>
+                )}
+                <div className="grid-card-body">
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
+                    <h3 className="ft" style={{ margin: 0 }}>{film.title}</h3>
                     <StatusPill status={film.status} />
                   </div>
-                </div>
-                <h3 className="ft" style={{ marginBottom: 14, position: "relative", zIndex: 1 }}>{film.title}</h3>
-                <p style={{ fontFamily: "'Crimson Pro',serif", fontSize: "clamp(13px,1.3vw,15px)", lineHeight: 1.8, color: C.inkDim, fontWeight: 300, marginBottom: 20, position: "relative", zIndex: 1, flex: 1 }}>{film.logline}</p>
-                <div style={{ display: "flex", flexWrap: "wrap", marginBottom: 20, position: "relative", zIndex: 1 }}>{film.tags.map(t => <span key={t} className="tag">{t}</span>)}</div>
-                <div style={{ display: "flex", gap: 16, position: "relative", zIndex: 1 }}>
-                  {film.liveHref ? <a href={film.liveHref} target="_blank" rel="noopener noreferrer" className="cs">Live</a> : null}
-                  {film.githubHref ? <a href={film.githubHref} target="_blank" rel="noopener noreferrer" className="cs cs-dim">GitHub</a> : null}
+                  <p style={{ fontFamily: "'Crimson Pro',serif", fontSize: "clamp(13px,1.3vw,15px)", lineHeight: 1.8, color: C.inkDim, fontWeight: 300, marginBottom: 16, flex: 1 }}>{film.logline}</p>
+                  <div style={{ display: "flex", flexWrap: "wrap", marginBottom: 16 }}>{film.tags.map(t => <span key={t} className="tag">{t}</span>)}</div>
+                  <div style={{ display: "flex", gap: 16 }}>
+                    {film.liveHref ? <a href={film.liveHref} target="_blank" rel="noopener noreferrer" className="cs">Live &#8599;</a> : null}
+                    {film.githubHref ? <a href={film.githubHref} target="_blank" rel="noopener noreferrer" className="cs cs-dim">GitHub &#8599;</a> : null}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          <ProjectToggle otherFilms={otherFilms} />
         </div>
       )}
 

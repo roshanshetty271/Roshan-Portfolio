@@ -74,7 +74,7 @@
 
 .carousel-stage {
   position: relative;
-  height: 480px;
+  height: 460px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,7 +87,7 @@
 
 .carousel-card {
   position: absolute;
-  width: 520px;
+  width: 620px;
   height: 400px;
   border-radius: 2px;
   overflow: hidden;
@@ -107,39 +107,26 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-}
-
-.screenshot-fallback {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(212,175,55,0.25) 0%, rgba(0,0,0,0.8) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.95) 0%,
-    rgba(0,0,0,0.65) 50%,
-    rgba(0,0,0,0.05) 100%
-  );
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 28px;
-  z-index: 2;
 }
 
-.card-base-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%);
-  z-index: 1;
-  pointer-events: none;
+.card-img-section {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.card-img-section img {
+  display: block;
+}
+
+.card-info-section {
+  padding: 14px 20px 16px;
+  background: rgba(0,0,0,0.85);
+  border-top: 1px solid rgba(212,175,55,0.15);
+  flex-shrink: 0;
 }
 
 .overlay-title {
@@ -150,6 +137,7 @@
   color: #FFFFFF;
   line-height: 1;
   margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
 }
 
 .carousel-label {
@@ -175,9 +163,10 @@
   font-style: italic;
   font-size: 13px;
   line-height: 1.65;
-  color: rgba(255,255,255,0.70);
+  color: rgba(255,255,255,0.85);
   font-weight: 300;
   margin-bottom: 16px;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.7);
 }
 
 .overlay-tags {
@@ -192,9 +181,10 @@
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
   padding: 2px 8px;
-  color: rgba(255,255,255,0.70);
+  color: rgba(255,255,255,0.85);
+  background: rgba(0,0,0,0.35);
 }
 
 .overlay-links {
@@ -220,7 +210,7 @@
   cursor: pointer;
 }
 
-.carousel-card.is-active .carousel-card-inner::after {
+.carousel-card.is-active .card-img-section::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -239,7 +229,7 @@
   transition: background-position 0.6s ease;
 }
 
-.carousel-card.is-active:hover .carousel-card-inner::after {
+.carousel-card.is-active:hover .card-img-section::after {
   background-position: -200% 0;
 }
 
@@ -338,6 +328,40 @@
   padding: 0 48px;
 }
 
+.grid-card {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.grid-card-img {
+  position: relative;
+  width: 100%;
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.grid-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.grid-card-body {
+  padding: 14px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.grid-card-body .ft { margin-bottom: 6px !important; }
+.grid-card-body p { margin-bottom: 8px !important; font-size: 12px !important; line-height: 1.55 !important; }
+.grid-card-body .tag { font-size: 10px; padding: 2px 6px; margin: 2px 2px 2px 0 !important; }
+
 @media (max-width: 900px) {
   .carousel-section { padding: 80px 0 60px; }
   .carousel-header { margin-bottom: 48px; padding: 0 24px; }
@@ -345,23 +369,29 @@
 }
 
 @media (max-width: 768px) {
-  .carousel-stage { height: 300px; }
-  .carousel-card  { width: 280px; height: 220px; }
+  .carousel-stage { height: 340px; }
+  .carousel-card  { width: 320px; height: 270px; }
+  .grid-card-img {
+    max-height: 140px;
+  }
+  .grid-card-body {
+    padding: 12px 14px;
+  }
   .carousel-nav { gap: 16px; margin-top: 28px; }
   .nav-dots { gap: 5px; }
   .overlay-logline { font-size: 11px; margin-bottom: 10px; }
   .overlay-tags { gap: 3px; margin-bottom: 12px; }
   .overlay-tag { font-size: 8px; padding: 2px 6px; }
-  .card-overlay { padding: 16px; }
+  .card-info-section { padding: 10px 14px 12px; }
   .overlay-title { font-size: 16px; margin-bottom: 6px; }
   .carousel-label-title { font-size: 20px; }
 }
 
 @media (max-width: 480px) {
-  .carousel-stage { height: 260px; }
-  .carousel-card  { width: 260px; height: 200px; }
+  .carousel-stage { height: 300px; }
+  .carousel-card  { width: 280px; height: 240px; }
   .carousel-header { padding: 0 16px; }
-  .card-overlay { padding: 12px; }
+  .card-info-section { padding: 8px 12px 10px; }
   .overlay-title { font-size: 14px; margin-bottom: 4px; }
   .overlay-logline {
     font-size: 10px;
