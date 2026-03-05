@@ -470,7 +470,7 @@ export const currentlyBuilding = [
     progress: 70,
     technologies: ["Next.js", "TypeScript", "D3.js", "Spotify API", "NextAuth", "Tailwind CSS"],
     github: "https://github.com/roshanshetty271/VISUALify",
-    demo: "https://visualify-nine.vercel.app/",
+    demo: null,
     lastUpdated: "Mar 2026",
   },
 ];
