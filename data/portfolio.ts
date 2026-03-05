@@ -219,7 +219,7 @@ export const otherProjects = [
   },
   {
     name: "VISUALify",
-    description: "Real-time Spotify music visualization and deep listening analytics. Four immersive D3.js modes — Galaxy, Terrain, Neural, and River — all BPM-synced to your music.",
+    description: "Real-time Spotify music visualization and deep listening analytics. VISUALify transforms your Spotify playback into an immersive sensory experience. By combining real-time song data with advanced audio analysis, it creates a living bridge between your ears and your eyes, while providing deep insights into your musical journey.",
     technologies: ["Next.js", "TypeScript", "D3.js", "Spotify API", "NextAuth", "Tailwind CSS"],
     github: "https://github.com/roshanshetty271/VISUALify",
     status: "in-progress",
@@ -466,7 +466,7 @@ export const currentlyBuilding = [
   {
     name: "VISUALify",
     subtitle: "Spotify Music Visualization & Analytics",
-    description: "Real-time Spotify music visualization and deep listening analytics. Transforms playback into immersive D3.js visualizations across four modes — Galaxy, Terrain, Neural, and River — all BPM-synced to your music.",
+    description: "Real-time Spotify music visualization and deep listening analytics. VISUALify transforms your Spotify playback into an immersive sensory experience. By combining real-time song data with advanced audio analysis, it creates a living bridge between your ears and your eyes, while providing deep insights into your musical journey.",
     progress: 70,
     technologies: ["Next.js", "TypeScript", "D3.js", "Spotify API", "NextAuth", "Tailwind CSS"],
     github: "https://github.com/roshanshetty271/VISUALify",
